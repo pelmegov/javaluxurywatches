@@ -1,6 +1,5 @@
 package ru.javaluxurywatches.controller;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,16 +7,18 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import ru.javaluxurywatches.Application;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {Application.class})
-class BaseControllerTest {
+class UserControllerTest {
 
     @Autowired
-    private BaseController baseController;
+    private UserController userController;
 
     @Test
-    void testMethod() {
-        Assertions.assertTrue(baseController.testMethod());
+    void testAddUser() {
+        assertTrue(userController.testAddUser());
     }
 
 }
