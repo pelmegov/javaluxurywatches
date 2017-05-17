@@ -16,6 +16,16 @@ public class BaseController extends ModelAttr {
         return "index";
     }
 
+    @RequestMapping("/contact")
+    public String contact(Map<String, Object> model) {
+        return "contact";
+    }
+
+    @RequestMapping("/blog")
+    public String blog(Map<String, Object> model) {
+        return "blog";
+    }
+
     boolean testMethod() {
         return true;
     }

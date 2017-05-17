@@ -8,15 +8,14 @@
                         <select tabindex="4" class="dropdown drop">
                             <option value="" class="label">Dollar :</option>
                             <option value="1">Dollar</option>
-                            <option value="2">Euro</option>
+                            <option value="2">Rubles</option>
                         </select>
                     </div>
                     <div class="box1">
                         <select tabindex="4" class="dropdown">
                             <option value="" class="label">English :</option>
                             <option value="1">English</option>
-                            <option value="2">French</option>
-                            <option value="3">German</option>
+                            <option value="2">Russian</option>
                         </select>
                     </div>
                     <div class="clearfix"></div>
@@ -54,8 +53,8 @@
                         <#list categories as category>
                             <li class="grid"><a href="${category.link}">${category.title}</a></li>
                         </#list>
-                        <li class="grid"><a href="typo.html">Blog</a></li>
-                        <li class="grid"><a href="contact.html">Contact</a></li>
+                        <li class="grid"><a href="/blog">Blog</a></li>
+                        <li class="grid"><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
