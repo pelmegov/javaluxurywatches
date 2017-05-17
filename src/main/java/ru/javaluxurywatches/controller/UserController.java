@@ -8,7 +8,7 @@ import ru.javaluxurywatches.repository.UserRepository;
 
 @RestController
 @RequestMapping("/users")
-public class UserController {
+public class UserController extends ModelAttr {
 
     private final UserRepository userRepository;
 

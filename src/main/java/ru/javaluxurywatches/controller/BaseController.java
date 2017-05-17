@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Map;
 
 @Controller
-public class BaseController {
+public class BaseController extends ModelAttr {
 
     public static final String WELCOME_MESSAGE = "welcome";
 
