@@ -1,8 +1,8 @@
-package ru.javaluxurywatches.repository;
+package ru.javaluxurywatches.repository.user;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ru.javaluxurywatches.model.User;
+import ru.javaluxurywatches.model.user.User;
 
 import java.util.List;
 

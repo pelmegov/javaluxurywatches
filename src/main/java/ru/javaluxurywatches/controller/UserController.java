@@ -3,12 +3,13 @@ package ru.javaluxurywatches.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.javaluxurywatches.model.User;
-import ru.javaluxurywatches.repository.UserRepository;
+import ru.javaluxurywatches.config.ModelAttrConfig;
+import ru.javaluxurywatches.model.user.User;
+import ru.javaluxurywatches.repository.user.UserRepository;
 
 @RestController
 @RequestMapping("/users")
-public class UserController extends ModelAttr {
+public class UserController extends ModelAttrConfig {
 
     private final UserRepository userRepository;
 

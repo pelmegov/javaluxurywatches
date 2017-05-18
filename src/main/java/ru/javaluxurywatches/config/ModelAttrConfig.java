@@ -1,11 +1,11 @@
-package ru.javaluxurywatches.controller;
+package ru.javaluxurywatches.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import ru.javaluxurywatches.model.Category;
-import ru.javaluxurywatches.repository.CategoryRepository;
+import ru.javaluxurywatches.model.shop.Category;
+import ru.javaluxurywatches.repository.shop.CategoryRepository;
 
-public class ModelAttr {
+public class ModelAttrConfig {
 
     @Autowired
     private CategoryRepository categoryRepository;

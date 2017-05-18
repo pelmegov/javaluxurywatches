@@ -1,4 +1,4 @@
-package ru.javaluxurywatches.model;
+package ru.javaluxurywatches.model.shop;
 
 import lombok.Data;
 
@@ -16,6 +16,7 @@ public class Category {
     @Column(unique = true)
     private String title;
 
+    @Column(unique = true)
     private String link;
 
 }
