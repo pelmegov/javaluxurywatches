@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.javaluxurywatches.config.ModelAttrConfig;
 import ru.javaluxurywatches.repository.blog.PostRepository;
+import ru.javaluxurywatches.repository.shop.ItemRepository;
 
 import java.util.Map;
 
@@ -15,15 +16,18 @@ public class BaseController extends ModelAttrConfig {
     public static final String POSTS = "posts";
 
     private final PostRepository postRepository;
+    private final ItemRepository itemRepository;
 
     @Autowired
-    public BaseController(PostRepository postRepository) {
+    public BaseController(PostRepository postRepository, ItemRepository itemRepository) {
         this.postRepository = postRepository;
+        this.itemRepository = itemRepository;
     }
 
     @RequestMapping("/")
     public String index(Map<String, Object> model) {
         model.put(WELCOME_MESSAGE, "Welcome in Java Luxury Watches Shop!");
+        model.put("indexItems", itemRepository.findAll());
         model.put(POSTS, postRepository.findByIsSlider(true));
         return "index";
     }
