@@ -6,4 +6,5 @@ import ru.javaluxurywatches.model.shop.Category;
 
 @Repository
 public interface CategoryRepository extends CrudRepository<Category, Long> {
+    Category findByLink(String link);
 }

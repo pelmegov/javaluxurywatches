@@ -2,6 +2,7 @@ package ru.javaluxurywatches.model.user;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import ru.javaluxurywatches.model.blog.Post;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.util.Set;
 @Entity
 @Table(name = "\"USER\"")
 @EqualsAndHashCode(exclude = {"id", "posts"})
+@ToString(exclude = {"id", "posts"})
 public class User {
 
     @Id

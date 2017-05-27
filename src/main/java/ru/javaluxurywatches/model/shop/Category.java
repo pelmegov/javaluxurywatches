@@ -2,6 +2,7 @@ package ru.javaluxurywatches.model.shop;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -10,6 +11,7 @@ import java.util.Set;
 @Entity
 @Table(name = "\"CATEGORY\"")
 @EqualsAndHashCode(exclude = {"id", "items"})
+@ToString(exclude = {"id", "items"})
 public class Category {
 
     @Id
