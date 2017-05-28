@@ -14,7 +14,7 @@
                                 <#list product.images as image>
                                     <li data-thumb="/${image.link}">
                                         <div class="thumb-image">
-                                            <img src="/${image.link}" data-imagezoom="true" class="img-responsive" alt="${image.alt}"/>
+                                            <img src="/${image.link}" alt="${image.alt}" data-imagezoom="true" class="img-responsive"/>
                                         </div>
                                     </li>
                                 </#list>
@@ -27,7 +27,7 @@
 
                         <script>
                             // Can also be used with $(document).ready()
-                            $(window).load(function () {
+                            $(document).ready(function () {
                                 $('.flexslider').flexslider({
                                     animation: "slide",
                                     controlNav: "thumbnails"
@@ -126,7 +126,7 @@
                     <div class="product-one">
                         <div class="col-md-4 product-left p-left">
                             <div class="product-main simpleCart_shelfItem">
-                                <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-1.png" alt="" /></a>
+                                <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="/images/p-1.png" alt="" /></a>
                                 <div class="product-bottom">
                                     <h3>Smart Watches</h3>
                                     <p>Explore Now</p>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="col-md-4 product-left p-left">
                             <div class="product-main simpleCart_shelfItem">
-                                <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-2.png" alt="" /></a>
+                                <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="/images/p-2.png" alt="" /></a>
                                 <div class="product-bottom">
                                     <h3>Smart Watches</h3>
                                     <p>Explore Now</p>
@@ -152,7 +152,7 @@
                         </div>
                         <div class="col-md-4 product-left p-left">
                             <div class="product-main simpleCart_shelfItem">
-                                <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="images/p-3.png" alt="" /></a>
+                                <a href="single.html" class="mask"><img class="img-responsive zoom-img" src="/images/p-3.png" alt="" /></a>
                                 <div class="product-bottom">
                                     <h3>Smart Watches</h3>
                                     <p>Explore Now</p>

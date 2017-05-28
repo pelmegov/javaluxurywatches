@@ -28,7 +28,7 @@ public class ProductController extends ModelAttrConfig {
             @NonNull @PathVariable("itemId") Long itemId,
             Model model) {
         model.addAttribute("product",
-                itemRepository.findItemByCategoriesIsAndId(categoryRepository.findByLink("/" + categoryLink), itemId));
+                itemRepository.findItemByCategoriesIsAndId(categoryRepository.findByLink(categoryLink), itemId));
         return "product";
     }
 

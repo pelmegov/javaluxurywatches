@@ -670,6 +670,7 @@ img.zoom-img {
     -moz-transition-timing-function: ease-out;
     -moz-transition-duration: 250ms;
 	margin: 0 auto;
+	max-height: 200px;
 }
 .product-left:hover img.zoom-img{
     -webkit-transform: scale(1.05);

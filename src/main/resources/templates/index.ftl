@@ -83,7 +83,7 @@
                     <#list row as item>
                         <div class="col-md-3 product-left">
                             <div class="product-main simpleCart_shelfItem">
-                                <a href="${item.id}" class="mask">
+                                <a href="/category/${item.categories?first.link}/${item.id}" class="mask">
                                     <img class="img-responsive zoom-img"
                                          src="${item.images?first.link}" alt="${item.images?first.alt}"/></a>
                                 <div class="product-bottom">

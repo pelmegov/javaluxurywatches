@@ -1,9 +1,9 @@
 INSERT INTO "user" (login, password, first_name, last_name) VALUES ('admin', '123456', 'walter', 'white');
 INSERT INTO "user" (login, password, first_name, last_name) VALUES ('user', '123456', 'jesse', 'pinkman');
 
-INSERT INTO "category" (title, link) VALUES ('Men', '/men');
-INSERT INTO "category" (title, link) VALUES ('Women', '/women');
-INSERT INTO "category" (title, link) VALUES ('Kids', '/kids');
+INSERT INTO "category" (title, link) VALUES ('Men', 'men');
+INSERT INTO "category" (title, link) VALUES ('Women', 'women');
+INSERT INTO "category" (title, link) VALUES ('Kids', 'kids');
 
 INSERT INTO "post" (title, link, is_active, image_link, is_slider, text, author_id, created_date) VALUES ('First Blog Post Title', '/1-blog-link', true, 'images/bnr-1.jpg', true, 'Smartwatches require pairing to a smartphone for notification functionality. It’s important to understand that not all smartwatches will work with all smartphones. Most smartwatches are compatible with an Android or iOS device, or, in some instances, both. Some have their own operating systems and will only work with specific devices of the same brand. Others might be compatible with a select variety of operating systems. Since smartwatches are devised to accompany your smartphone, you’ll want to be sure it’s compatible with your phones existing operating system.', 1, '2017-01-01 03:14:07');
 INSERT INTO "post" (title, link, is_active, image_link, is_slider, text, author_id, created_date) VALUES ('Second Blog Post Title', '/2-blog-link', true, 'images/bnr-2.jpg', false, 'When choosing a smartwatch operating system, there are a few things to consider beyond basic compatibility. For the most part, Android Wear and Watch OS are more similar than not. Watch OS has a reputation for being quick, clean and consistent. Only apps that go through Apple''s strict approval process get released. Android Wear uses an open-source model, creating many customization options.', 2, '2017-01-01 03:14:07');
@@ -18,7 +18,9 @@ INSERT INTO "item" (title, price, text) VALUES ('SEVENFRIDAY', 1895.00, 'BAUME E
 INSERT INTO "item" (title, price, text) VALUES ('BAUME ET MERCIER', 1495.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
 INSERT INTO "item" (title, price, text) VALUES ('OMEGA', 1540.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
 
-INSERT INTO "image" (link, alt, item_id) VALUES ('images/p-1.png', 'Good 1 Watch!', 1);
+INSERT INTO "image" (link, alt, item_id) VALUES ('images/s-1.jpg', 'Good 1 Watch!', 1);
+INSERT INTO "image" (link, alt, item_id) VALUES ('images/s-2.jpg', 'Good 2 Watch!', 1);
+INSERT INTO "image" (link, alt, item_id) VALUES ('images/s-3.jpg', 'Good 3 Watch!', 1);
 INSERT INTO "image" (link, alt, item_id) VALUES ('images/p-2.png', 'Good 2 Watch!', 2);
 INSERT INTO "image" (link, alt, item_id) VALUES ('images/p-3.png', 'Good 3 Watch!', 3);
 INSERT INTO "image" (link, alt, item_id) VALUES ('images/p-4.png', 'Good 4 Watch!', 4);
