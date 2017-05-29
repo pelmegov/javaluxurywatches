@@ -32,4 +32,13 @@ public class ProductController extends ModelAttrConfig {
         return "shop/product";
     }
 
+    @RequestMapping(value = "/category/{categoryLink}")
+    public String detailProductPage(
+            @NonNull @PathVariable("categoryLink") String categoryLink,
+            Model model) {
+        model.addAttribute("products",
+                itemRepository.findByCategoriesIs(categoryRepository.findByLink(categoryLink)));
+        return "shop/products";
+    }
+
 }

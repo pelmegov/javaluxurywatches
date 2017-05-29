@@ -13,6 +13,7 @@
             <h2>
                 <a href="/blog/${post.link}">${post.title}</a>
             </h2>
+            <hr>
             <img class="img-responsive" src="/${post.imageLink}" alt="">
             <hr>
             <p>${post.text}</p>
