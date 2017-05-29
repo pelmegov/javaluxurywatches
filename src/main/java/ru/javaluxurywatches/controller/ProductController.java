@@ -22,14 +22,14 @@ public class ProductController extends ModelAttrConfig {
         this.categoryRepository = categoryRepository;
     }
 
-    @RequestMapping(value = "/category/{categoryLink}/{itemId}")
-    public String product(
+    @RequestMapping(value = "/category/{categoryLink}/{productId}")
+    public String detailProductPage(
             @NonNull @PathVariable("categoryLink") String categoryLink,
-            @NonNull @PathVariable("itemId") Long itemId,
+            @NonNull @PathVariable("productId") Long productId,
             Model model) {
         model.addAttribute("product",
-                itemRepository.findItemByCategoriesIsAndId(categoryRepository.findByLink(categoryLink), itemId));
-        return "product";
+                itemRepository.findItemByCategoriesIsAndId(categoryRepository.findByLink(categoryLink), productId));
+        return "shop/product";
     }
 
 }

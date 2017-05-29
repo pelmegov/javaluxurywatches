@@ -13,4 +13,5 @@ public interface PostRepository extends CrudRepository<Post, Long> {
     Set<Post> findByAuthorId(Long id);
     Set<Post> findByIsSlider(Boolean active);
     Set<Post> findByIsActive(Boolean active);
+    Post findByLinkAndIsActive(String link, Boolean active);
 }

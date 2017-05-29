@@ -1,6 +1,6 @@
-<#include "include/template.ftl" />
+<#include "/include/template.ftl" />
 
-<@template title="Blog">
+<@template title="Blog pages">
 
 <div class="blog">
     <div class="container">
@@ -11,17 +11,12 @@
             <#list posts as post>
 
             <h2>
-                <a href="${post.link}">${post.title}</a>
+                <a href="/blog/${post.link}">${post.title}</a>
             </h2>
-            <p class="lead">
-                Author: ${post.author.firstName} ${post.author.lastName}
-            </p>
-            <p><span class="glyphicon glyphicon-time"></span> Posted on ${post.createdDate?date}</p>
-            <hr>
-            <img class="img-responsive" src="${post.imageLink}" alt="">
+            <img class="img-responsive" src="/${post.imageLink}" alt="">
             <hr>
             <p>${post.text}</p>
-            <a class="btn btn-default" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a class="btn btn-default" href="/blog/${post.link}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
             <hr>
 

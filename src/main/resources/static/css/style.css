@@ -3066,3 +3066,17 @@ ul.tag-men {
 }
 }
 /*--media-quaries-end-here--*/
+
+.blog a {
+	color: #000000;
+}
+
+.blog h2 {
+	font-size: 32px;
+	margin-top: 20px;
+	font-family: 'Lora-Regular';
+	text-transform: uppercase;
+}
+.blog h2:hover {
+	cursor: pointer;
+}

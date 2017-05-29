@@ -10,8 +10,8 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name = "\"CATEGORY\"")
-@EqualsAndHashCode(exclude = {"id", "items"})
-@ToString(exclude = {"id", "items"})
+@EqualsAndHashCode(exclude = {"id", "products"})
+@ToString(exclude = {"id", "products"})
 public class Category {
 
     @Id
@@ -24,8 +24,8 @@ public class Category {
     private String link;
 
     @ManyToMany
-    @JoinTable(name = "category_item", joinColumns = @JoinColumn(name = "category_id"),
-            inverseJoinColumns = @JoinColumn(name = "item_id"))
-    private Set<Item> items;
+    @JoinTable(name = "category_product", joinColumns = @JoinColumn(name = "category_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id"))
+    private Set<Product> products;
 
 }

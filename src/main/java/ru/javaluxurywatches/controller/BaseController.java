@@ -11,9 +11,9 @@ import ru.javaluxurywatches.repository.shop.ItemRepository;
 @Controller
 public class BaseController extends ModelAttrConfig {
 
-    public static final String WELCOME_MESSAGE = "welcome";
-    public static final String POSTS = "posts";
-    public static final String INDEX_ITEMS = "indexItems";
+    private static final String WELCOME_MESSAGE = "welcome";
+    private static final String POSTS = "posts";
+    private static final String INDEX_ITEMS = "indexItems";
 
     private final PostRepository postRepository;
     private final ItemRepository itemRepository;

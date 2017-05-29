@@ -19,6 +19,6 @@ public class Image {
 
     @ManyToOne
     @PrimaryKeyJoinColumn
-    private Item item;
+    private Product product;
 
 }

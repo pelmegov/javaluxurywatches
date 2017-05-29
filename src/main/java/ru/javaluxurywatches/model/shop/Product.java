@@ -10,10 +10,10 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "\"ITEM\"")
+@Table(name = "\"PRODUCT\"")
 @EqualsAndHashCode(exclude = {"id", "categories", "images"})
 @ToString(exclude = {"id", "categories", "images"})
-public class Item {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,10 +26,10 @@ public class Item {
 
     private BigDecimal price;
 
-    @OneToMany(mappedBy = "item", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private Set<Image> images;
 
-    @ManyToMany(mappedBy="items")
+    @ManyToMany(mappedBy="products")
     private Set<Category> categories;
 
 }
