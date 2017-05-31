@@ -8,7 +8,7 @@
         <div class="col-md-12">
 
             <h2>
-                <a href="/blog/${post.link}">${post.title}</a>
+                ${post.title}
             </h2>
             <p class="lead">
                 Author: ${post.author.firstName} ${post.author.lastName}
