@@ -6,12 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.javaluxurywatches.config.ModelAttrConfig;
 import ru.javaluxurywatches.repository.shop.CategoryRepository;
 import ru.javaluxurywatches.repository.shop.ItemRepository;
 
 @Controller
-public class ProductController extends ModelAttrConfig {
+public class ProductController {
 
     final private ItemRepository itemRepository;
     final private CategoryRepository categoryRepository;

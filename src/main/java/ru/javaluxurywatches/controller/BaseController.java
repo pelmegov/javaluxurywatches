@@ -4,12 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.javaluxurywatches.config.ModelAttrConfig;
 import ru.javaluxurywatches.repository.blog.PostRepository;
 import ru.javaluxurywatches.repository.shop.ItemRepository;
 
 @Controller
-public class BaseController extends ModelAttrConfig {
+public class BaseController {
 
     private static final String WELCOME_MESSAGE = "welcome";
     private static final String POSTS = "posts";

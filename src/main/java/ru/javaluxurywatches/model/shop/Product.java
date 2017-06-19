@@ -3,6 +3,8 @@ package ru.javaluxurywatches.model.shop;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -27,9 +29,11 @@ public class Product {
     private BigDecimal price;
 
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @Fetch(FetchMode.JOIN)
     private Set<Image> images;
 
     @ManyToMany(mappedBy="products")
+    @Fetch(FetchMode.JOIN)
     private Set<Category> categories;
 
 }
