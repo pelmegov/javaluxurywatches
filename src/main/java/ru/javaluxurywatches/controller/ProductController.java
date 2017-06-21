@@ -12,6 +12,11 @@ import ru.javaluxurywatches.repository.shop.ItemRepository;
 @Controller
 public class ProductController {
 
+    private interface Attr {
+        String PRODUCTS = "products";
+        String PRODUCT = "product";
+    }
+
     final private ItemRepository itemRepository;
     final private CategoryRepository categoryRepository;
 
@@ -26,7 +31,7 @@ public class ProductController {
             @NonNull @PathVariable("categoryLink") String categoryLink,
             @NonNull @PathVariable("productId") Long productId,
             Model model) {
-        model.addAttribute("product",
+        model.addAttribute(Attr.PRODUCT,
                 itemRepository.findItemByCategoriesIsAndId(categoryRepository.findByLink(categoryLink), productId));
         return "shop/product";
     }
@@ -35,7 +40,7 @@ public class ProductController {
     public String detailProductPage(
             @NonNull @PathVariable("categoryLink") String categoryLink,
             Model model) {
-        model.addAttribute("products",
+        model.addAttribute(Attr.PRODUCTS,
                 itemRepository.findByCategoriesIs(categoryRepository.findByLink(categoryLink)));
         return "shop/products";
     }
