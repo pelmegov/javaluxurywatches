@@ -21,7 +21,15 @@
                     <div class="clearfix"></div>
                 </div>
             </div>
-            <div class="col-md-6 top-header-left">
+            <div class="col-md-offset-2 col-md-2 top-header-left">
+                <div class="auth_reg">
+                    <a href="/authorization">Authorization</a>
+                </div>
+                <div class="auth_reg">
+                    <a href="/registration">Registration</a>
+                </div>
+            </div>
+            <div class="col-md-2 top-header-left">
                 <div class="cart box_1">
                     <a href="checkout.html">
                         <div class="total">

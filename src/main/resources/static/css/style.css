@@ -3080,3 +3080,11 @@ ul.tag-men {
 .blog h2:hover {
 	cursor: pointer;
 }
+
+.auth_reg a {
+	color: #fff;
+}
+
+.auth_reg a:hover {
+	color: #fff;
+}
