@@ -11,8 +11,8 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name = "\"USER\"")
-@EqualsAndHashCode(exclude = {"id", "posts"})
-@ToString(exclude = {"id", "posts"})
+@EqualsAndHashCode(exclude = {"id", "posts", "roles"})
+@ToString(exclude = {"id", "posts", "roles"})
 public class User {
 
     @Id
@@ -30,5 +30,9 @@ public class User {
 
     @OneToMany(mappedBy = "author", fetch = FetchType.LAZY)
     private Set<Post> posts;
+
+    @ManyToMany
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
 
 }

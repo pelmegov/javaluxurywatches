@@ -1,6 +1,13 @@
 INSERT INTO "user" (login, password, first_name, last_name) VALUES ('admin', '123456', 'walter', 'white');
 INSERT INTO "user" (login, password, first_name, last_name) VALUES ('user', '123456', 'jesse', 'pinkman');
 
+INSERT INTO "role" (name) VALUES ('ADMIN_ROLE');
+INSERT INTO "role" (name) VALUES ('USER_ROLE');
+
+INSERT INTO "user_role" (user_id, role_id) VALUES (1, 1);
+INSERT INTO "user_role" (user_id, role_id) VALUES (1, 2);
+INSERT INTO "user_role" (user_id, role_id) VALUES (2, 2);
+
 INSERT INTO "category" (title, link) VALUES ('Men', 'men');
 INSERT INTO "category" (title, link) VALUES ('Women', 'women');
 INSERT INTO "category" (title, link) VALUES ('Kids', 'kids');
