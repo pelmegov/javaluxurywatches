@@ -61,7 +61,7 @@
                         <#list categories as category>
                             <li class="grid"><a href="/category/${category.link}">${category.title}</a></li>
                         </#list>
-                        <li class="grid"><a href="/blog">Blog</a></li>
+                        <li class="grid"><a href="/blog?size=${blogPageSize}">Blog</a></li>
                         <li class="grid"><a href="/contact">Contact</a></li>
                     </ul>
                 </div>

@@ -10,14 +10,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
     private final HandlerInterceptor menuInterceptor;
+    private final HandlerInterceptor appInterceptor;
 
     @Autowired
-    public WebMvcConfig(HandlerInterceptor menuInterceptor) {
+    public WebMvcConfig(HandlerInterceptor menuInterceptor, HandlerInterceptor appInterceptor) {
         this.menuInterceptor = menuInterceptor;
+        this.appInterceptor = appInterceptor;
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(menuInterceptor);
+        registry.addInterceptor(appInterceptor);
     }
+
 }
