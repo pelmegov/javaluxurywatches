@@ -31,6 +31,19 @@
                         <div class="clearfix"></div>
                     </div>
                 </#list>
+                <!-- Pager -->
+                <ul class="pager">
+                    <#if !isFirstPage>
+                        <li class="previous">
+                            <a href="/category/${categoryLink}?size=${categoryPageSize}&page=${currentPage - 1}">&larr; Older</a>
+                        </li>
+                    </#if>
+                    <#if !isLastPage>
+                        <li class="next">
+                            <a href="/category/${categoryLink}?size=${categoryPageSize}&page=${currentPage + 1}">Newer &rarr;</a>
+                        </li>
+                    </#if>
+                </ul>
             </div>
             <div class="col-md-3 prdt-right">
                 <div class="w_sidebar">

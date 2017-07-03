@@ -14,11 +14,15 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
     @Value("${blog.page-size}")
     private Integer blogPageSize;
 
+    @Value("${category.page-size}")
+    private Integer categoryPageSize;
+
     @Override
     public void postHandle(HttpServletRequest request,
                            HttpServletResponse response, Object handler,
                            ModelAndView modelAndView) throws Exception {
         modelAndView.addObject("blogPageSize", blogPageSize);
+        modelAndView.addObject("categoryPageSize", categoryPageSize);
         super.postHandle(request, response, handler, modelAndView);
     }
 

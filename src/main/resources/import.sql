@@ -25,7 +25,12 @@ INSERT INTO "product" (title, price, text) VALUES ('GLYCINE', 318.00, 'BAUME ET 
 INSERT INTO "product" (title, price, text) VALUES ('AUDEMARS PIGUET', 199.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
 INSERT INTO "product" (title, price, text) VALUES ('SEVENFRIDAY', 1895.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
 INSERT INTO "product" (title, price, text) VALUES ('BAUME ET MERCIER', 1495.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
-INSERT INTO "product" (title, price, text) VALUES ('OMEGA', 1540.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
+INSERT INTO "product" (title, price, text) VALUES ('BAUME ET MERCIER', 1540.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
+INSERT INTO "product" (title, price, text) VALUES ('SEVENFRIDAY', 1895.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
+INSERT INTO "product" (title, price, text) VALUES ('AUDEMARS PIGUET', 318.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
+INSERT INTO "product" (title, price, text) VALUES ('GLYCINE', 3575.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
+INSERT INTO "product" (title, price, text) VALUES ('CITIZEN', 1195.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
+INSERT INTO "product" (title, price, text) VALUES ('AUDEMARS PIGUET', 1099.00, 'BAUME ET MERCIER Baume and Mercier Hampton Silver Dial Brown Leather Ladies Watch');
 
 INSERT INTO "image" (link, alt, product_id) VALUES ('images/s-1.jpg', 'Good 1 Watch!', 1);
 INSERT INTO "image" (link, alt, product_id) VALUES ('images/s-2.jpg', 'Good 2 Watch!', 1);
@@ -37,6 +42,14 @@ INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-5.png', 'Good 5 Wa
 INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-6.png', 'Good 6 Watch!', 6);
 INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-7.png', 'Good 7 Watch!', 7);
 INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-8.png', 'Good 8 Watch!', 8);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-7.png', 'Good 9 Watch!', 9);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-6.png', 'Good 10 Watch!', 10);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-5.png', 'Good 11 Watch!', 11);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-4.png', 'Good 12 Watch!', 12);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-3.png', 'Good 13 Watch!', 13);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-2.png', 'Good 14 Watch!', 14);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-1.png', 'Good 15 Watch!', 15);
+
 
 INSERT INTO "category_product" (product_id, category_id) VALUES (1, 1);
 INSERT INTO "category_product" (product_id, category_id) VALUES (2, 2);
@@ -46,3 +59,9 @@ INSERT INTO "category_product" (product_id, category_id) VALUES (5, 3);
 INSERT INTO "category_product" (product_id, category_id) VALUES (6, 2);
 INSERT INTO "category_product" (product_id, category_id) VALUES (7, 1);
 INSERT INTO "category_product" (product_id, category_id) VALUES (8, 1);
+INSERT INTO "category_product" (product_id, category_id) VALUES (9, 1);
+INSERT INTO "category_product" (product_id, category_id) VALUES (10, 1);
+INSERT INTO "category_product" (product_id, category_id) VALUES (11, 1);
+INSERT INTO "category_product" (product_id, category_id) VALUES (12, 1);
+INSERT INTO "category_product" (product_id, category_id) VALUES (13, 1);
+INSERT INTO "category_product" (product_id, category_id) VALUES (14, 1);

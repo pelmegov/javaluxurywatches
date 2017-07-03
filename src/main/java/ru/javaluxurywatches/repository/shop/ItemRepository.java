@@ -1,6 +1,8 @@
 package ru.javaluxurywatches.repository.shop;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 import ru.javaluxurywatches.model.shop.Category;
 import ru.javaluxurywatches.model.shop.Product;
@@ -8,7 +10,8 @@ import ru.javaluxurywatches.model.shop.Product;
 import java.util.Set;
 
 @Repository
-public interface ItemRepository extends CrudRepository<Product, Long> {
+public interface ItemRepository extends PagingAndSortingRepository<Product, Long> {
     Product findItemByCategoriesIsAndId(Category category, Long id);
     Set<Product> findByCategoriesIs(Category category);
+    Page<Product> findByCategoriesIs(Category category, Pageable pageable);
 }
