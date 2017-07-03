@@ -41,15 +41,14 @@ INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-4.png', 'Good 4 Wa
 INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-5.png', 'Good 5 Watch!', 5);
 INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-6.png', 'Good 6 Watch!', 6);
 INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-7.png', 'Good 7 Watch!', 7);
-INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-8.png', 'Good 8 Watch!', 8);
-INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-7.png', 'Good 9 Watch!', 9);
-INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-6.png', 'Good 10 Watch!', 10);
-INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-5.png', 'Good 11 Watch!', 11);
-INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-4.png', 'Good 12 Watch!', 12);
-INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-3.png', 'Good 13 Watch!', 13);
-INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-2.png', 'Good 14 Watch!', 14);
-INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-1.png', 'Good 15 Watch!', 15);
-
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-16.jpg', 'Good 8 Watch!', 8);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-17.jpg', 'Good 9 Watch!', 9);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-10.jpeg', 'Good 10 Watch!', 10);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-11.jpg', 'Good 11 Watch!', 11);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-12.jpg', 'Good 12 Watch!', 12);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-13.jpg', 'Good 13 Watch!', 10);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-14.jpg', 'Good 14 Watch!', 11);
+INSERT INTO "image" (link, alt, product_id) VALUES ('images/p-15.jpg', 'Good 15 Watch!', 13);
 
 INSERT INTO "category_product" (product_id, category_id) VALUES (1, 1);
 INSERT INTO "category_product" (product_id, category_id) VALUES (2, 2);
@@ -64,4 +63,3 @@ INSERT INTO "category_product" (product_id, category_id) VALUES (10, 1);
 INSERT INTO "category_product" (product_id, category_id) VALUES (11, 1);
 INSERT INTO "category_product" (product_id, category_id) VALUES (12, 1);
 INSERT INTO "category_product" (product_id, category_id) VALUES (13, 1);
-INSERT INTO "category_product" (product_id, category_id) VALUES (14, 1);
