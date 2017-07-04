@@ -21,9 +21,11 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
     public void postHandle(HttpServletRequest request,
                            HttpServletResponse response, Object handler,
                            ModelAndView modelAndView) throws Exception {
-        modelAndView.addObject("blogPageSize", blogPageSize);
-        modelAndView.addObject("categoryPageSize", categoryPageSize);
-        super.postHandle(request, response, handler, modelAndView);
+        if (modelAndView != null) {
+            modelAndView.addObject("blogPageSize", blogPageSize);
+            modelAndView.addObject("categoryPageSize", categoryPageSize);
+            super.postHandle(request, response, handler, modelAndView);
+        }
     }
 
 }

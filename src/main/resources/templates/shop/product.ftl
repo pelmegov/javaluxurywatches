@@ -52,7 +52,13 @@
                                 <div class="clearfix"> </div>
                             </div>
 
-                            <h5 class="item_price">$ ${product.price}</h5>
+                            <h5 class="item_price">
+                                <#if (product.discount > 0) >
+                                    <span class="item_discount">$${product.price}</span> $ ${product.price - (product.price * product.discount / 100)}
+                                <#else>
+                                    $ ${product.price}
+                                </#if>
+                            </h5>
                             <p>${product.text}</p>
                             <div class="available">
                                 <ul>

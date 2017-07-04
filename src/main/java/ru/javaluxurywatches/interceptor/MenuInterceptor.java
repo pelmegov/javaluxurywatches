@@ -23,7 +23,9 @@ public class MenuInterceptor extends HandlerInterceptorAdapter {
     public void postHandle(HttpServletRequest request,
                            HttpServletResponse response, Object handler,
                            ModelAndView modelAndView) throws Exception {
-        modelAndView.addObject("categories", categoryRepository.findAll());
-        super.postHandle(request, response, handler, modelAndView);
+        if (modelAndView != null) {
+            modelAndView.addObject("categories", categoryRepository.findAll());
+            super.postHandle(request, response, handler, modelAndView);
+        }
     }
 }
