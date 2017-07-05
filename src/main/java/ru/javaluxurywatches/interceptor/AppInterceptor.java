@@ -1,31 +1,31 @@
 package ru.javaluxurywatches.interceptor;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-import ru.javaluxurywatches.repository.shop.CategoryRepository;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Component
-public class MenuInterceptor extends HandlerInterceptorAdapter {
+public class AppInterceptor extends HandlerInterceptorAdapter {
 
-    private final CategoryRepository categoryRepository;
+    @Value("${blog.page-size}")
+    private Integer blogPageSize;
 
-    @Autowired
-    public MenuInterceptor(CategoryRepository categoryRepository) {
-        this.categoryRepository = categoryRepository;
-    }
+    @Value("${category.page-size}")
+    private Integer categoryPageSize;
 
     @Override
     public void postHandle(HttpServletRequest request,
                            HttpServletResponse response, Object handler,
                            ModelAndView modelAndView) throws Exception {
         if (modelAndView != null) {
-            modelAndView.addObject("categories", categoryRepository.findAll());
+            modelAndView.addObject("blogPageSize", blogPageSize);
+            modelAndView.addObject("categoryPageSize", categoryPageSize);
             super.postHandle(request, response, handler, modelAndView);
         }
     }
+
 }

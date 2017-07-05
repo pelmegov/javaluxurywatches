@@ -28,6 +28,8 @@ public class Product {
 
     private BigDecimal price;
 
+    private Integer discount;
+
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     @Fetch(FetchMode.JOIN)
     private Set<Image> images;

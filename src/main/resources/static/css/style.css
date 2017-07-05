@@ -3088,3 +3088,10 @@ ul.tag-men {
 .auth_reg a:hover {
 	color: #fff;
 }
+
+.item_discount {
+	display: inline-block;
+	margin-right: 5px !important;
+	text-decoration: line-through;
+	color: #acacac !important;
+}

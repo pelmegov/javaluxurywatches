@@ -19,18 +19,39 @@
                                         <h3>${item.title}</h3>
                                         <p>Explore Now</p>
                                         <h4><a class="item_add" href="#"><i></i></a>
-                                            <span class=" item_price">$ ${item.price}</span>
+                                            <span class=" item_price">
+                                                <#if (item.discount > 0) >
+                                                    <span class="item_discount">$${item.price}</span> $ ${item.price - (item.price * item.discount / 100)}
+                                                <#else>
+                                                    $ ${item.price}
+                                                </#if>
+                                            </span>
                                         </h4>
                                     </div>
-                                    <div class="srch">
-                                        <span>-50%</span>
-                                    </div>
+                                    <#if (item.discount > 0) >
+                                        <div class="srch">
+                                            <span>-${item.discount}%</span>
+                                        </div>
+                                    </#if>
                                 </div>
                             </div>
                         </#list>
                         <div class="clearfix"></div>
                     </div>
                 </#list>
+                <!-- Pager -->
+                <ul class="pager">
+                    <#if !isFirstPage>
+                        <li class="previous">
+                            <a href="/category/${categoryLink}?size=${categoryPageSize}&page=${currentPage - 1}">&larr; Older</a>
+                        </li>
+                    </#if>
+                    <#if !isLastPage>
+                        <li class="next">
+                            <a href="/category/${categoryLink}?size=${categoryPageSize}&page=${currentPage + 1}">Newer &rarr;</a>
+                        </li>
+                    </#if>
+                </ul>
             </div>
             <div class="col-md-3 prdt-right">
                 <div class="w_sidebar">

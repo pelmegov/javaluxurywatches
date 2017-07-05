@@ -1,13 +1,15 @@
 package ru.javaluxurywatches.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ru.javaluxurywatches.model.shop.Product;
 import ru.javaluxurywatches.repository.shop.CategoryRepository;
 import ru.javaluxurywatches.repository.shop.ItemRepository;
 
 import javax.transaction.Transactional;
-import java.util.List;
+import java.util.Set;
 
 @Service
 @Transactional
@@ -20,12 +22,16 @@ public class ProductService {
     private CategoryRepository categoryRepository;
 
 
-    public List<Product> findItemByCategoriesAndId(String categoryLink, Long productId) {
+    public Product findItemByCategoriesAndId(String categoryLink, Long productId) {
         return itemRepository.findItemByCategoriesIsAndId(categoryRepository.findByLink(categoryLink), productId);
     }
 
-    public List<Product> findItemByCategories(String categoryLink) {
+    public Set<Product> findItemByCategories(String categoryLink) {
         return itemRepository.findByCategoriesIs(categoryRepository.findByLink(categoryLink));
+    }
+
+    public Page<Product> findByCategoriesIs(String categoryLink, Pageable pageable) {
+        return itemRepository.findByCategoriesIs(categoryRepository.findByLink(categoryLink), pageable);
     }
 
 }

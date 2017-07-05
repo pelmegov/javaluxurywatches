@@ -2,21 +2,28 @@ package ru.javaluxurywatches.controller;
 
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import ru.javaluxurywatches.model.shop.Product;
 import org.springframework.web.bind.annotation.RestController;
 import ru.javaluxurywatches.repository.shop.CategoryRepository;
 import ru.javaluxurywatches.repository.shop.ItemRepository;
 import ru.javaluxurywatches.services.ProductService;
 
-@RestController
+@Controller
 public class ProductController {
 
     private interface Attr {
         String PRODUCTS = "products";
         String PRODUCT = "product";
+        String CURRENT_PAGE = "currentPage";
+        String IS_FIRST_PAGE = "isFirstPage";
+        String IS_LAST_PAGE = "isLastPage";
+        String CATEGORY_LINK = "categoryLink";
     }
 
 //    final private ItemRepository itemRepository;
@@ -48,10 +55,14 @@ public class ProductController {
     @RequestMapping(value = "/category/{categoryLink}")
     public String detailProductPage(
             @NonNull @PathVariable("categoryLink") String categoryLink,
-            Model model) {
-        model.addAttribute(Attr.PRODUCTS,
-//                itemRepository.findByCategoriesIs(categoryRepository.findByLink(categoryLink)));
-                productService.findItemByCategories(categoryLink));
+            Model model,
+            Pageable pageable) {
+        Page<Product> products = itemRepository.findByCategoriesIs(categoryRepository.findByLink(categoryLink), pageable);
+        model.addAttribute(Attr.PRODUCTS, products.getContent());
+        model.addAttribute(Attr.CURRENT_PAGE, pageable.getPageNumber());
+        model.addAttribute(Attr.IS_FIRST_PAGE, products.isFirst());
+        model.addAttribute(Attr.IS_LAST_PAGE, products.isLast());
+        model.addAttribute(Attr.CATEGORY_LINK, categoryLink);
         return "shop/products";
     }
 
