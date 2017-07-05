@@ -13,6 +13,7 @@
                 <input placeholder="Last name" type="text" tabindex="2" required>
                 <input placeholder="Email address" type="text" tabindex="3" required>
                 <input placeholder="Mobile" type="text" tabindex="3" required>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <ul>
                     <li><label class="radio left"><input type="radio" name="radio" checked=""><i></i>Male</label></li>
                     <li><label class="radio"><input type="radio" name="radio"><i></i>Female</label></li>
