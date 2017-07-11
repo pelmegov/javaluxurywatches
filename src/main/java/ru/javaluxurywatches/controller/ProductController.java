@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import ru.javaluxurywatches.model.shop.Product;
-import ru.javaluxurywatches.repository.shop.CategoryRepository;
-import ru.javaluxurywatches.repository.shop.ItemRepository;
+import ru.javaluxurywatches.service.shop.CategoryService;
+import ru.javaluxurywatches.service.shop.ItemService;
 
 @Controller
 public class ProductController {
@@ -24,13 +24,13 @@ public class ProductController {
         String CATEGORY_LINK = "categoryLink";
     }
 
-    final private ItemRepository itemRepository;
-    final private CategoryRepository categoryRepository;
+    final private ItemService itemService;
+    final private CategoryService categoryService;
 
     @Autowired
-    public ProductController(ItemRepository itemRepository, CategoryRepository categoryRepository) {
-        this.itemRepository = itemRepository;
-        this.categoryRepository = categoryRepository;
+    public ProductController(ItemService itemService, CategoryService categoryService) {
+        this.itemService = itemService;
+        this.categoryService = categoryService;
     }
 
     @RequestMapping(value = "/category/{categoryLink}/{productId}")
@@ -39,7 +39,7 @@ public class ProductController {
             @NonNull @PathVariable("productId") Long productId,
             Model model) {
         model.addAttribute(Attr.PRODUCT,
-                itemRepository.findItemByCategoriesIsAndId(categoryRepository.findByLink(categoryLink), productId));
+                itemService.findItemByCategoriesIsAndId(categoryService.findByLink(categoryLink), productId));
         return "shop/product";
     }
 
@@ -48,7 +48,7 @@ public class ProductController {
             @NonNull @PathVariable("categoryLink") String categoryLink,
             Model model,
             Pageable pageable) {
-        Page<Product> products = itemRepository.findByCategoriesIs(categoryRepository.findByLink(categoryLink), pageable);
+        Page<Product> products = itemService.findByCategoriesIs(categoryService.findByLink(categoryLink), pageable);
         model.addAttribute(Attr.PRODUCTS, products.getContent());
         model.addAttribute(Attr.CURRENT_PAGE, pageable.getPageNumber());
         model.addAttribute(Attr.IS_FIRST_PAGE, products.isFirst());

@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import ru.javaluxurywatches.repository.blog.PostRepository;
-import ru.javaluxurywatches.repository.shop.ItemRepository;
+import ru.javaluxurywatches.service.blog.PostService;
+import ru.javaluxurywatches.service.shop.ItemService;
 
 @Controller
 public class BaseController {
@@ -16,20 +16,20 @@ public class BaseController {
         String INDEX_ITEMS = "indexItems";
     }
 
-    private final PostRepository postRepository;
-    private final ItemRepository itemRepository;
+    private final PostService postService;
+    private final ItemService itemService;
 
     @Autowired
-    public BaseController(PostRepository postRepository, ItemRepository itemRepository) {
-        this.postRepository = postRepository;
-        this.itemRepository = itemRepository;
+    public BaseController(PostService postService, ItemService itemService) {
+        this.postService = postService;
+        this.itemService = itemService;
     }
 
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute(Attr.WELCOME_MESSAGE, "Welcome in Java Luxury Watches Shop!");
-        model.addAttribute(Attr.INDEX_ITEMS, itemRepository.findAll());
-        model.addAttribute(Attr.POSTS, postRepository.findByIsSlider(true));
+        model.addAttribute(Attr.INDEX_ITEMS, itemService.findAll());
+        model.addAttribute(Attr.POSTS, postService.findByIsSlider(true));
         return "index";
     }
 

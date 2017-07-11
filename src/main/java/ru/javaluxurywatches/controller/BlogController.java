@@ -23,16 +23,16 @@ public class BlogController {
         String IS_LAST_PAGE = "isLastPage";
     }
 
-    private final PostRepository postRepository;
+    private final PostRepository postService;
 
     @Autowired
-    public BlogController(PostRepository postRepository) {
-        this.postRepository = postRepository;
+    public BlogController(PostRepository postService) {
+        this.postService = postService;
     }
 
     @RequestMapping("/blog")
     public String pages(Model model, Pageable pageable) {
-        Page<Post> posts = postRepository.findByIsActive(true, pageable);
+        Page<Post> posts = postService.findByIsActive(true, pageable);
         model.addAttribute(Attr.POSTS, posts.getContent());
         model.addAttribute(Attr.CURRENT_PAGE, pageable.getPageNumber());
         model.addAttribute(Attr.IS_FIRST_PAGE, posts.isFirst());
@@ -42,7 +42,7 @@ public class BlogController {
 
     @RequestMapping("/blog/{link}")
     public String page(@NonNull @PathVariable("link") String link, Model model) {
-        model.addAttribute(Attr.POST, postRepository.findByLinkAndIsActive(link, true));
+        model.addAttribute(Attr.POST, postService.findByLinkAndIsActive(link, true));
         return "blog/post";
     }
 
