@@ -2,6 +2,7 @@ package ru.javaluxurywatches.service.shop;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ru.javaluxurywatches.model.shop.Category;
@@ -36,6 +37,11 @@ public class ItemService {
 
     public Iterable<Product> findAll() {
         return itemRepository.findAll();
+    }
+
+    public Iterable<Product> findForIndex(Integer indexItems) {
+        Pageable pageable = new PageRequest(0, indexItems);
+        return itemRepository.findAll(pageable).getContent();
     }
 
 }
