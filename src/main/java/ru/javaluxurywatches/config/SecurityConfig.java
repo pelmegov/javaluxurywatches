@@ -45,9 +45,10 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth
                 .jdbcAuthentication()
                 .dataSource(this.dataSource)
-                .usersByUsernameQuery("select login, password from \"user\" where login=?")
-                .authoritiesByUsernameQuery("select \"user\".login, \"role\".name from \"user_role\" where login=?" +
-                        "AND \"user\".id = \"user_role\".user_id AND \"role\".id = \"user_role\".role_id");
+                .usersByUsernameQuery("select login, password, is_active from \"user\" where login = ?")
+                .authoritiesByUsernameQuery("select \"user\".login, role.name, \"user\".is_active from " +
+                        " \"user\", role, user_role where \"user\".login = ? " +
+                        "AND \"user\".id = user_role.user_id AND role.id = user_role.role_id");
     }
 
 }

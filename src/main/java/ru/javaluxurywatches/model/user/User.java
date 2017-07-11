@@ -28,6 +28,8 @@ public class User {
 
     private String lastName;
 
+    private Boolean isActive;
+
     @OneToMany(mappedBy = "author", fetch = FetchType.LAZY)
     private Set<Post> posts;
 
