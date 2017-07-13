@@ -1,4 +1,4 @@
-<#macro template title="Welcome in Java Luxury Watches Shop!" disableBreadcrubms=false>
+<#macro template title="Welcome in Java Luxury Watches Shop!" enableBreadcrumbs=true>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +25,7 @@
 </head>
 <body>
     <#include "header.ftl">
-    <#if disableBreadcrubms == false><#include "breadcrumbs.ftl"></#if>
+    <#if enableBreadcrumbs><#include "breadcrumbs.ftl"></#if>
     <#nested/>
     <#include "footer.ftl">
 </body>

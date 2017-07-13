@@ -1,6 +1,6 @@
 <#include "include/template.ftl" />
 
-<@template title="Java Luxury Watches Shop!" disableBreadcrubms=true>
+<@template title="Java Luxury Watches Shop!" enableBreadcrumbs=false>
 <!--banner-starts-->
 <div class="bnr" id="home">
     <div id="top" class="callbacks_container">
