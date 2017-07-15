@@ -28,8 +28,6 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/static/**")
                 .permitAll()
-                .anyRequest()
-                .fullyAuthenticated()
                 .and()
                 .formLogin()
                 .loginPage("/authorization")
