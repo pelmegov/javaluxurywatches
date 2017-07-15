@@ -3095,3 +3095,8 @@ ul.tag-men {
 	text-decoration: line-through;
 	color: #acacac !important;
 }
+
+.item-block-title {
+	margin-left: 20px;
+	font-family: FontAwesome;
+}

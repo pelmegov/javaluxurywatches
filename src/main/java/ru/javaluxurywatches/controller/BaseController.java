@@ -15,6 +15,7 @@ public class BaseController {
         String WELCOME_MESSAGE = "welcome";
         String POSTS = "posts";
         String INDEX_ITEMS = "indexItems";
+        String INDEX_HITS = "indexHits";
     }
 
     @Value("${index.items}")
@@ -33,6 +34,7 @@ public class BaseController {
     public String index(Model model) {
         model.addAttribute(Attr.WELCOME_MESSAGE, "Welcome in Java Luxury Watches Shop!");
         model.addAttribute(Attr.INDEX_ITEMS, itemService.findForIndex(indexItems));
+        model.addAttribute(Attr.INDEX_HITS, itemService.findHitsForIndex());
         model.addAttribute(Attr.POSTS, postService.findByIsSlider(true));
         return "index";
     }

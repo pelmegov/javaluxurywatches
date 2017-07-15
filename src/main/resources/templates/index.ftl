@@ -74,9 +74,53 @@
     </div>
 </div>
 <!--about-end-->
+
+<!--hits-starts-->
+<div class="product">
+    <div class="container">
+        <h1 class="item-block-title">HITS</h1>
+        <div class="product-top">
+            <#list indexHits?chunk(4) as row>
+                <div class="product-one">
+                    <#list row as item>
+                        <div class="col-md-3 product-left">
+                            <div class="product-main simpleCart_shelfItem">
+                                <a href="/category/${item.categories?first.link}/${item.id}" class="mask">
+                                    <img class="img-responsive zoom-img"
+                                         src="${item.images?first.link}" alt="${item.images?first.alt}"/></a>
+                                <div class="product-bottom">
+                                    <h3>${item.title}</h3>
+                                    <p>Explore Now</p>
+                                    <h4><a class="item_add" href="#"><i></i></a>
+                                        <span class=" item_price">
+                                            <#if (item.discount > 0) >
+                                                <span class="item_discount">$${item.price}</span> $ ${item.price - (item.price * item.discount / 100)}
+                                            <#else>
+                                                $ ${item.price}
+                                            </#if>
+                                        </span>
+                                    </h4>
+                                </div>
+                                <#if (item.discount > 0) >
+                                    <div class="srch">
+                                        <span>-${item.discount}%</span>
+                                    </div>
+                                </#if>
+                            </div>
+                        </div>
+                    </#list>
+                    <div class="clearfix"></div>
+                </div>
+            </#list>
+        </div>
+    </div>
+</div>
+<!--hits-starts-->
+
 <!--product-starts-->
 <div class="product">
     <div class="container">
+        <h1 class="item-block-title">PRODUCTS</h1>
         <div class="product-top">
             <#list indexItems?chunk(4) as row>
                 <div class="product-one">

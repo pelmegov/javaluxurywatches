@@ -44,4 +44,8 @@ public class ItemService {
         return itemRepository.findAll(pageable).getContent();
     }
 
+    public Iterable<Product> findHitsForIndex() {
+        Pageable pageable = new PageRequest(0, 4);
+        return itemRepository.findItemByIsHit(true, pageable).getContent();
+    }
 }
