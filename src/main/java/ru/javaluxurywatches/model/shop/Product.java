@@ -30,6 +30,8 @@ public class Product {
 
     private Integer discount;
 
+    private Boolean isHit;
+
     @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     @Fetch(FetchMode.JOIN)
     private Set<Image> images;
