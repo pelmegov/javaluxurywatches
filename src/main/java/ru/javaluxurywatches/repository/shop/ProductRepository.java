@@ -10,8 +10,8 @@ import ru.javaluxurywatches.model.shop.Product;
 import java.util.Set;
 
 @Repository
-public interface ItemRepository extends PagingAndSortingRepository<Product, Long> {
-    Product findItemByCategoriesIsAndId(Category category, Long id);
+public interface ProductRepository extends PagingAndSortingRepository<Product, Long> {
+    Product findProductByCategoriesIsAndId(Category category, Long id);
     Set<Product> findByCategoriesIs(Category category);
     Page<Product> findByCategoriesIs(Category category, Pageable pageable);
     Page<Product> findItemByIsHit(Boolean isHit, Pageable pageable);

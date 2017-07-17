@@ -3089,14 +3089,14 @@ ul.tag-men {
 	color: #fff;
 }
 
-.item_discount {
+.product_discount {
 	display: inline-block;
 	margin-right: 5px !important;
 	text-decoration: line-through;
 	color: #acacac !important;
 }
 
-.item-block-title {
+.product-block-title {
 	margin-left: 20px;
 	font-family: FontAwesome;
 }

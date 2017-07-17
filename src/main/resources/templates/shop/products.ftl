@@ -9,28 +9,28 @@
             <div class="col-md-9 prdt-left">
                 <#list products?chunk(3) as row>
                     <div class="product-one">
-                        <#list row as item>
+                        <#list row as product>
                             <div class="col-md-4 product-left p-left">
                                 <div class="product-main simpleCart_shelfItem">
-                                    <a href="/category/${item.categories?first.link}/${item.id}" class="mask">
+                                    <a href="/category/${product.categories?first.link}/${product.id}" class="mask">
                                         <img class="img-responsive zoom-img"
-                                             src="/${item.images?first.link}" alt="${item.images?first.alt}"/></a>
+                                             src="/${product.images?first.link}" alt="${product.images?first.alt}"/></a>
                                     <div class="product-bottom">
-                                        <h3>${item.title}</h3>
+                                        <h3>${product.title}</h3>
                                         <p>Explore Now</p>
                                         <h4><a class="item_add" href="#"><i></i></a>
                                             <span class=" item_price">
-                                                <#if (item.discount > 0) >
-                                                    <span class="item_discount">$${item.price}</span> $ ${item.price - (item.price * item.discount / 100)}
+                                                <#if (product.discount > 0) >
+                                                    <span class="product_discount">$${product.price}</span> $ ${product.price - (product.price * product.discount / 100)}
                                                 <#else>
-                                                    $ ${item.price}
+                                                    $ ${product.price}
                                                 </#if>
                                             </span>
                                         </h4>
                                     </div>
-                                    <#if (item.discount > 0) >
+                                    <#if (product.discount > 0) >
                                         <div class="srch">
-                                            <span>-${item.discount}%</span>
+                                            <span>-${product.discount}%</span>
                                         </div>
                                     </#if>
                                 </div>
