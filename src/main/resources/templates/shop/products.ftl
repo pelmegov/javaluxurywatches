@@ -19,13 +19,16 @@
                                         <h3>${product.title}</h3>
                                         <p>Explore Now</p>
                                         <h4><a class="item_add" href="#"><i></i></a>
-                                            <span class=" item_price">
-                                                <#if (product.discount > 0) >
-                                                    <span class="product_discount">$${product.price}</span> $ ${product.price - (product.price * product.discount / 100)}
-                                                <#else>
+                                            <#if (product.discount > 0) >
+                                                <span class="product_discount">$${product.price}</span>
+                                                <span class=" item_price">
+                                                    $ ${(product.price - (product.price * product.discount / 100))?floor}
+                                                </span>
+                                            <#else>
+                                                <span class=" item_price">
                                                     $ ${product.price}
-                                                </#if>
-                                            </span>
+                                                </span>
+                                            </#if>
                                         </h4>
                                     </div>
                                     <#if (product.discount > 0) >
