@@ -10,7 +10,7 @@
 			</div>
 			<div class="ckeckout-top">
 			<div class="cart-items">
-			 <h3>My Shopping Bag (3)</h3>
+			 <h3>My Shopping Bag (<span class="simpleCart_quantity"></span>)</h3>
 				<script>$(document).ready(function(c) {
 					$('.close1').on('click', function(c){
 						$('.cart-header').fadeOut('slow', function(c){
@@ -35,8 +35,8 @@
 						});	  
 					});
 			   </script>
-				
-			<div class="in-check" >
+
+                <div class="in-check" >
 				<ul class="unit">
 					<li><span>Item</span></li>
 					<li><span>Product Name</span></li>		
