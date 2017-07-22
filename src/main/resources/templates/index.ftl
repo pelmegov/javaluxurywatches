@@ -7,7 +7,7 @@
         <ul class="rslides" id="slider4">
             <#list posts as post>
                 <li>
-                    <a href="${post.link}"><img src="${post.imageLink}" alt=""/></a>
+                    <a href="/blog/${post.link}"><img src="${post.imageLink}" alt=""/></a>
                 </li>
             </#list>
         </ul>

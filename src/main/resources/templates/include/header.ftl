@@ -7,7 +7,7 @@
                     <div class="box">
                         <select tabindex="4" class="dropdown drop">
                             <option value="" class="label">Dollar :</option>
-                            <option value="1">Dollar</option>
+                            <option value="1">Dollars</option>
                             <option value="2">Rubles</option>
                         </select>
                     </div>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-md-2 top-header-left">
                 <div class="cart box_1">
-                    <a href="checkout.html">
+                    <a href="/checkout">
                         <div class="total">
                             <span class="simpleCart_total"></span></div>
                         <img src="/images/cart-1.png" alt="Cart" />

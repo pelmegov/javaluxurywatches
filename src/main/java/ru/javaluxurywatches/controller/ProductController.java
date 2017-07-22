@@ -57,4 +57,9 @@ public class ProductController {
         return "shop/products";
     }
 
+    @RequestMapping(value = "/checkout")
+    public String cart() {
+        return "shop/checkout";
+    }
+
 }
