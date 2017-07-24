@@ -89,7 +89,8 @@
                                     <img class="img-responsive zoom-img"
                                          src="${product.images?first.link}" alt="${product.images?first.alt}"/></a>
                                 <div class="product-bottom">
-                                    <h3>${product.title}</h3>
+                                    <span class="hidden item_id">${product.id}</span>
+                                    <h3 class="item_name">${product.title}</h3>
                                     <p>Explore Now</p>
                                     <h4><a class="item_add" href="#"><i></i></a>
                                         <#if (product.discount > 0) >
@@ -134,7 +135,8 @@
                                     <img class="img-responsive zoom-img"
                                          src="${product.images?first.link}" alt="${product.images?first.alt}"/></a>
                                 <div class="product-bottom">
-                                    <h3>${product.title}</h3>
+                                    <span class="hidden item_id">${product.id}</span>
+                                    <h3 class="item_name">${product.title}</h3>
                                     <p>Explore Now</p>
                                     <h4><a class="item_add" href="#"><i></i></a>
                                         <#if (product.discount > 0) >
