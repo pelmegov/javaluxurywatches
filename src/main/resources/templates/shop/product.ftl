@@ -37,7 +37,12 @@
                     </div>
                     <div class="col-md-7 single-top-right">
                         <div class="single-para simpleCart_shelfItem">
+
                             <span class="hidden item_id">${product.id}</span>
+                            <span class="hidden item_image-link">${product.images?first.link}</span>
+                            <span class="hidden item_image-alt">${product.images?first.alt}</span>
+                            <span class="hidden item_item-link">/category/${product.categories?first.link}/${product.id}</span>
+
                             <h2 class="item_name">${product.title}</h2>
                             <div class="star-on">
                                 <ul class="star-footer">
