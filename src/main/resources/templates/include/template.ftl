@@ -17,6 +17,7 @@
         } </script>
     <script src="/js/simpleCart.min.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/bootstrap-notify.min.js"></script>
     <link href="/css/memenu.css" rel="stylesheet" type="text/css" media="all"/>
     <script type="text/javascript" src="/js/memenu.js"></script>
     <script>$(document).ready(function () {
