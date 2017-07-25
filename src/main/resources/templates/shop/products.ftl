@@ -16,7 +16,12 @@
                                         <img class="img-responsive zoom-img"
                                              src="/${product.images?first.link}" alt="${product.images?first.alt}"/></a>
                                     <div class="product-bottom">
+
                                         <span class="hidden item_id">${product.id}</span>
+                                        <span class="hidden item_image-link">${product.images?first.link}</span>
+                                        <span class="hidden item_image-alt">${product.images?first.alt}</span>
+                                        <span class="hidden item_item-link">/category/${product.categories?first.link}/${product.id}</span>
+
                                         <h3 class="item_name">${product.title}</h3>
                                         <p>Explore Now</p>
                                         <h4><a class="item_add" href="#"><i></i></a>

@@ -31,7 +31,7 @@
             </div>
             <div class="col-md-2 top-header-left">
                 <div class="cart box_1">
-                    <a href="/checkout">
+                    <a class="simpleCart_checkout" href="/checkout">
                         <div class="total">
                             <span class="simpleCart_total"></span></div>
                         <img src="/images/cart-1.png" alt="Cart" />
