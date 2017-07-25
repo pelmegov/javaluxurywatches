@@ -20,8 +20,8 @@ simpleCart({
                     "</a>\n" +
                     "</li>" +
                     "<li><span class='name'>" + item.get('name') + "</span></li>" +
-                    "<li><span class='cost'>" + item.get('price') + "</span></li>" +
-                    "<li><span>Free</span><p>Delivered in 2-3 business days</p></li>\n" +
+                    "<li><span class='cost'>" + item.get('quantity') + "</span></li>" +
+                    "<li><span class='cost'>" + item.get('price') + " $</span></li>" +
                     "<div class='clearfix'> </div>\n" +
                     "</ul>";
 

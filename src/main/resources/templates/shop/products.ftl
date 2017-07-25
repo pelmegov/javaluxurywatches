@@ -24,7 +24,7 @@
 
                                         <h3 class="item_name">${product.title}</h3>
                                         <p>Explore Now</p>
-                                        <h4><a class="item_add" href="#"><i></i></a>
+                                        <h4><a class="item_add" href="javascript:;"><i></i></a>
                                             <#if (product.discount > 0) >
                                                 <span class="product_discount">$${product.price}</span>
                                                 <span class=" item_price">
