@@ -58,15 +58,11 @@
                                 <div class="clearfix"> </div>
                             </div>
 
+                            <h5 class="item_price">
+                                $ ${product.price}
+                            </h5>
                             <#if (product.discount > 0) >
-                                <h5 class=" item_price">
-                                    $ ${(product.price - (product.price * product.discount / 100))?floor}
-                                </h5>
-                                <div class="product_discount">$${product.price}</div>
-                            <#else>
-                                <h5 class=" item_price">
-                                    $ ${product.price}
-                                </h5>
+                                <span class="product_discount">$ ${product.priceWithoutDiscount}</span>
                             </#if>
 
                             <p>${product.text}</p>

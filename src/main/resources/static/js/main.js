@@ -70,6 +70,7 @@ simpleCart({
                     "<li><span class='name'>" + item.get('name') + "</span></li>" +
                     "<li><span class='cost'>" + item.get('quantity') + "</span></li>" +
                     "<li><span class='cost'>" + item.get('price') + " $</span></li>" +
+                    "<li><span class='cost'>" + (item.get('price') * item.get('quantity')) + " $</span></li>" +
                     "<div class='clearfix'> </div>\n" +
                     "</ul>";
 

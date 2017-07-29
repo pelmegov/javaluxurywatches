@@ -17,10 +17,13 @@
                         <li><span>Product Name</span></li>
                         <li><span>Quantity</span></li>
                         <li><span>Unit Price</span></li>
+                        <li><span>Product Sum</span></li>
                         <div class="clearfix"></div>
                     </ul>
                     <#-- This is a cart items. See main.js file for more information. -->
                     <div class="simpleCart_items"></div>
+                    <#-- Total price -->
+                    <div class="cart-total pull-right">TOTAL: <span class="simpleCart_total"></span></div>
                 </div>
             </div>
         </div>

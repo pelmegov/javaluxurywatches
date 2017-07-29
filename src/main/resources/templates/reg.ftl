@@ -1,4 +1,4 @@
-<#include "include/template.ftl" />
+<#include "/include/template.ftl" />
 
 <@template title="Register page">
 <!--register-starts-->
@@ -9,10 +9,10 @@
         </div>
         <div class="register-main">
             <div class="col-md-6 account-left">
-                <input placeholder="First name" type="text" tabindex="1" required>
-                <input placeholder="Last name" type="text" tabindex="2" required>
-                <input placeholder="Email address" type="text" tabindex="3" required>
-                <input placeholder="Mobile" type="text" tabindex="3" required>
+                <input placeholder="First name" tabindex="1" required>
+                <input placeholder="Last name" tabindex="2" required>
+                <input placeholder="Email address" tabindex="3" required>
+                <input placeholder="Mobile" tabindex="3" required>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <ul>
                     <li><label class="radio left"><input type="radio" name="radio" checked=""><i></i>Male</label></li>

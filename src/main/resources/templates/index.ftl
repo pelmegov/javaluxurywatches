@@ -1,4 +1,4 @@
-<#include "include/template.ftl" />
+<#include "/include/template.ftl" />
 
 <@template title="Java Luxury Watches Shop!" enableBreadcrumbs=false>
 <!--banner-starts-->
@@ -99,15 +99,11 @@
                                     <p>Explore Now</p>
                                     <h4><a class="item_add" href="javascript:;"><i></i></a>
                                         <#if (product.discount > 0) >
-                                            <span class="product_discount">$${product.price}</span>
-                                            <span class=" item_price">
-                                                $ ${(product.price - (product.price * product.discount / 100))?floor}
-                                            </span>
-                                        <#else>
-                                            <span class=" item_price">
-                                                $ ${product.price}
-                                            </span>
+                                            <span class="product_discount">$ ${product.priceWithoutDiscount}</span>
                                         </#if>
+                                        <span class="item_price">
+                                            $ ${product.price}
+                                        </span>
                                     </h4>
                                 </div>
                                 <#if (product.discount > 0) >
@@ -150,15 +146,11 @@
                                     <p>Explore Now</p>
                                     <h4><a class="item_add" href="javascript:;"><i></i></a>
                                         <#if (product.discount > 0) >
-                                            <span class="product_discount">$${product.price}</span>
-                                            <span class=" item_price">
-                                                $ ${(product.price - (product.price * product.discount / 100))?floor}
-                                            </span>
-                                        <#else>
-                                            <span class=" item_price">
-                                                $ ${product.price}
-                                            </span>
+                                            <span class="product_discount">$ ${product.priceWithoutDiscount}</span>
                                         </#if>
+                                        <span class="item_price">
+                                            $ ${product.price}
+                                        </span>
                                     </h4>
                                 </div>
                                 <#if (product.discount > 0) >
