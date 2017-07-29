@@ -3,6 +3,7 @@ package ru.javaluxurywatches.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 import ru.javaluxurywatches.model.user.User;
 import ru.javaluxurywatches.service.user.UserService;
 
@@ -20,6 +21,11 @@ public class UserController {
     @RequestMapping("/")
     public Iterable<User> users() {
         return userService.findAll();
+    }
+
+    @RequestMapping("/profile")
+    public ModelAndView profile() {
+        return new ModelAndView("profile/user");
     }
 
     boolean testAddUser() {
