@@ -1,4 +1,4 @@
-<#include "include/template.ftl" />
+<#include "/include/template.ftl" />
 
 <@template title="Contact">
 <!--contact-start-->

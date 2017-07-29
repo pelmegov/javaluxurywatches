@@ -1,4 +1,4 @@
-<#include "include/template.ftl" />
+<#include "/include/template.ftl" />
 
 <@template title="Authorization page">
 <!--account-starts-->
@@ -12,7 +12,7 @@
                 <h3>Existing User</h3>
                 <div class="account-bottom">
                     <form action="/authorization" method="post">
-                        <input placeholder="Login" type="text" name="username" tabindex="3" required>
+                        <input placeholder="Login" name="username" tabindex="3" required>
                         <input placeholder="Password" type="password" name="password" tabindex="4" required>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <div class="address">
