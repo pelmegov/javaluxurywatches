@@ -39,11 +39,6 @@ public class BaseController {
         return "index";
     }
 
-    @RequestMapping("/contact")
-    public String contact() {
-        return "contact";
-    }
-
     boolean testMethod() {
         return true;
     }

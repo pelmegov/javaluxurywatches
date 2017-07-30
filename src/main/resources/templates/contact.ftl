@@ -4,6 +4,19 @@
 <!--contact-start-->
 <div class="contact">
     <div class="container">
+
+        <#if isSended??>
+            <#if isSended>
+                <script>
+                    messageSendSuccess();
+                </script>
+            <#else>
+                <script>
+                    messageSendError();
+                </script>
+            </#if>
+        </#if>
+
         <div class="contact-top heading">
             <h2>CONTACT</h2>
         </div>
@@ -23,11 +36,12 @@
                 </div>
             </div>
             <div class="col-md-9 contact-right">
-                <form>
-                    <input type="text" placeholder="Name">
-                    <input type="text" placeholder="Phone">
-                    <input type="text" placeholder="Email">
-                    <textarea placeholder="Message" required=""></textarea>
+                <form action="/contact" method="post">
+                    <input type="text" placeholder="Name" name="name">
+                    <input type="text" placeholder="Phone" name="phone">
+                    <input type="text" placeholder="Email" name="email">
+                    <textarea placeholder="Message" name="message" required=""></textarea>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="submit-btn">
                         <input type="submit" value="SUBMIT">
                     </div>
