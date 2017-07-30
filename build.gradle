@@ -20,6 +20,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-freemarker:1.1.7.RELEASE')
     compile("org.springframework.boot:spring-boot-devtools")
     compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.boot:spring-boot-starter-mail:1.2.0.RELEASE")
 }
 
 buildscript {
