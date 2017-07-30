@@ -1,11 +1,9 @@
 package ru.javaluxurywatches.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 import ru.javaluxurywatches.model.user.User;
 import ru.javaluxurywatches.service.user.UserService;
 
@@ -26,12 +24,8 @@ public class UserController {
     }
 
     @RequestMapping("/profile")
-    public ModelAndView profile() {
-        ModelAndView modelAndView = new ModelAndView("profile/user");
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.findByLogin(auth.getName());
-        modelAndView.addObject("user", user);
-        return modelAndView;
+    public String profile(Model model) {
+        return "profile/user";
     }
 
     boolean testAddUser() {
