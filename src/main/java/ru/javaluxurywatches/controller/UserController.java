@@ -28,6 +28,16 @@ public class UserController {
         return "profile/user";
     }
 
+    @RequestMapping("/profile/setting")
+    public String mainSetting(Model model) {
+        return "profile/main";
+    }
+
+    @RequestMapping("/profile/account")
+    public String accountSetting(Model model) {
+        return "profile/account";
+    }
+
     boolean testAddUser() {
         User user = new User();
         user.setLogin("TestUser");
