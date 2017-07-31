@@ -25,18 +25,16 @@
             <#if (user)??>
                 <div class="drop">
                              <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
-                                 <a href="users/profile">
                                         <img src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png"
                                              class="img-responsive img-circle" title="John Doe" alt="John Doe"
                                              width="30px" height="30px">
-                                     </a>
                                     </span>
                     <div class="box">
                         <select tabindex="4" class="dropdown drop"
                                 onchange="if (this.value) window.location.href=this.value">
                             <option value="" class="label">${user.firstName}</option>
                             <option value="/users/profile">Profile</option>
-                            <option value="#">Setting</option>
+                            <option value="/users/profile/setting">Setting</option>
                             <option value="/logout">Logout</option>
                         </select>
                     </div>
