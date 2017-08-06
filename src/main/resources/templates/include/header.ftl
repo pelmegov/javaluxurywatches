@@ -26,7 +26,9 @@
                 <div class="drop">
                              <span class="user-avatar pull-left">
                                         <img src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png"
-                                             class="img-responsive img-circle" title="John Doe" alt="John Doe"
+                                             class="img-responsive img-circle"
+                                             title="${user.firstName} ${user.lastName}"
+                                             alt="${user.firstName} ${user.lastName}"
                                              width="30px" height="30px">
                                     </span>
                     <div class="box">

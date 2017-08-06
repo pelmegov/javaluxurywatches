@@ -3,6 +3,7 @@ package ru.javaluxurywatches.model.user;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.hibernate.validator.constraints.Email;
 import ru.javaluxurywatches.model.blog.Post;
 
 import javax.persistence.*;
@@ -27,6 +28,10 @@ public class User {
     private String firstName;
 
     private String lastName;
+
+    @Email
+    @Column(unique = true)
+    private String email;
 
     private Boolean isActive;
 
