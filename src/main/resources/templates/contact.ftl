@@ -37,9 +37,9 @@
             </div>
             <div class="col-md-9 contact-right">
                 <form action="/contact" method="post">
-                    <input type="text" placeholder="Name" name="name">
+                    <input type="text" placeholder="Name" name="name" value="<#if (user)??>${user.firstName}</#if>">
                     <input type="text" placeholder="Phone" name="phone">
-                    <input type="text" placeholder="Email" name="email">
+                    <input type="text" placeholder="Email" name="email" value="<#if (user)??>${user.email}</#if>">
                     <textarea placeholder="Message" name="message" required=""></textarea>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="submit-btn">
