@@ -8,6 +8,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.sql.DataSource;
 
@@ -26,15 +27,15 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/static/**")
-                .permitAll()
+                .antMatchers("/static/**").permitAll()
+                .antMatchers("/users/**").access("hasRole('ROLE_USER')")
                 .and()
                 .formLogin()
                 .loginPage("/authorization")
                 .failureUrl("/authorization?error")
                 .permitAll()
                 .and()
-                .logout()
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/")
                 .permitAll();
     }
 
