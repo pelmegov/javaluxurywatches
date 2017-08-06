@@ -34,7 +34,7 @@
         <div class="panel panel-default">
             <div class="panel-body">
                     <span>
-                        <h1 class="panel-title pull-left" style="font-size:30px;">${user.firstName} ${user.lastName}
+                        <h1 class="profile-title panel-title pull-left">${user.firstName} ${user.lastName}
                             <small>example@pods.tld</small> <i
                                     class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip"
                                     data-placement="bottom" title="John Doe is sharing with you"></i></h1>
@@ -59,31 +59,31 @@
                 <br><br>
                 <hr>
                 <span class="pull-left">
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-files-o"
-                                                                                          aria-hidden="true"></i> Posts</a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-picture-o"
-                                                                                          aria-hidden="true"></i> Photos <span
+                        <a href="#" class="btn-profile btn btn-link"><i class="fa fa-fw fa-files-o"
+                                                                        aria-hidden="true"></i> Posts</a>
+                        <a href="#" class="btn-profile btn btn-link"><i class="fa fa-fw fa-picture-o"
+                                                                        aria-hidden="true"></i> Photos <span
                                 class="badge">42</span></a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-fw fa-users"
-                                                                                          aria-hidden="true"></i> Contacts <span
+                        <a href="#" class="btn-profile btn btn-link"><i class="fa fa-fw fa-users"
+                                                                        aria-hidden="true"></i> Contacts <span
                                 class="badge">42</span></a>
                     </span>
                 <span class="pull-right">
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-at"
-                                                                                          aria-hidden="true"
-                                                                                          data-toggle="tooltip"
-                                                                                          data-placement="bottom"
-                                                                                          title="Mention"></i></a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-envelope-o"
-                                                                                          aria-hidden="true"
-                                                                                          data-toggle="tooltip"
-                                                                                          data-placement="bottom"
-                                                                                          title="Message"></i></a>
-                        <a href="#" class="btn btn-link" style="text-decoration:none;"><i class="fa fa-lg fa-ban"
-                                                                                          aria-hidden="true"
-                                                                                          data-toggle="tooltip"
-                                                                                          data-placement="bottom"
-                                                                                          title="Ignore"></i></a>
+                        <a href="#" class="btn-profile btn btn-link""><i class="fa fa-lg fa-at"
+                                                                         aria-hidden="true"
+                                                                         data-toggle="tooltip"
+                                                                         data-placement="bottom"
+                                                                         title="Mention"></i></a>
+                    <a href="#" class="btn-profile btn btn-link"><i class="fa fa-lg fa-envelope-o"
+                                                                    aria-hidden="true"
+                                                                    data-toggle="tooltip"
+                                                                    data-placement="bottom"
+                                                                    title="Message"></i></a>
+                        <a href="#" class="btn-profile btn btn-link"><i class="fa fa-lg fa-ban"
+                                                                        aria-hidden="true"
+                                                                        data-toggle="tooltip"
+                                                                        data-placement="bottom"
+                                                                        title="Ignore"></i></a>
                     </span>
             </div>
         </div>
@@ -93,37 +93,18 @@
             <div class="panel-body">
                 <div class="pull-left">
                     <a href="#">
-                        <img class="media-object img-circle" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png"
-                             width="50px" height="50px" style="margin-right:8px; margin-top:-5px;">
+                        <img class="profile-media media-object img-circle"
+                             src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png"
+                             width="50px" height="50px">
                     </a>
                 </div>
-                <h4><a href="#" style="text-decoration:none;"><strong>John Doe</strong></a> –
+                <h4><a class="profile-media" href="#"><strong>John Doe</strong></a> –
                     <small>
-                        <small><a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o"
-                                                                                           aria-hidden="true"></i>
+                        <small><a class="profile-media" href="#"><i><i class="fa fa-clock-o"
+                                                                       aria-hidden="true"></i>
                             42 minutes ago</i></a></small>
                     </small>
                 </h4>
-                <span>
-                        <div class="navbar-right">
-                            <div class="dropdown">
-                                <button class="btn btn-link btn-xs dropdown-toggle" type="button" id="dd1"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    <i class="fa fa-cog" aria-hidden="true"></i>
-                                    <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dd1" style="float: right;">
-                                    <li><a href="#"><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> Report</a></li>
-                                    <li><a href="#"><i class="fa fa-fw fa-ban" aria-hidden="true"></i> Ignore</a></li>
-                                    <li><a href="#"><i class="fa fa-fw fa-bell" aria-hidden="true"></i> Enable notifications for this post</a></li>
-                                    <li><a href="#"><i class="fa fa-fw fa-eye-slash"
-                                                       aria-hidden="true"></i> Hide</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-fw fa-trash" aria-hidden="true"></i> Delete</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </span>
                 <hr>
                 <div class="post-content">
                     <p>Simple post content example.</p>
@@ -140,24 +121,13 @@
                             Comment</a>
                     </div>
                     <div class="pull-left">
-                        <p class="text-muted" style="margin-left:5px;"><i class="fa fa-globe"
-                                                                          aria-hidden="true"></i> Public</p>
+                        <p class="text-muted""><i class="fa fa-globe"
+                                                  aria-hidden="true"></i> Public</p>
                     </div>
                     <br>
                 </div>
                 <hr>
-                <div class="media">
-                    <div class="pull-left">
-                        <a href="#">
-                            <img class="media-object img-circle"
-                                 src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png" width="35px" height="35px"
-                                 style="margin-left:3px; margin-right:-5px;">
-                        </a>
-                    </div>
-                    <div class="media-body">
-                        <textarea class="form-control" rows="1" placeholder="Comment"></textarea>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

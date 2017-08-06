@@ -24,7 +24,7 @@
             <div class="col-md-offset-2 col-md-2 top-header-left">
             <#if (user)??>
                 <div class="drop">
-                             <span class="user-avatar pull-left" style="margin-right:8px; margin-top:-5px;">
+                             <span class="user-avatar pull-left">
                                         <img src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png"
                                              class="img-responsive img-circle" title="John Doe" alt="John Doe"
                                              width="30px" height="30px">
@@ -38,7 +38,6 @@
                             <option value="/logout">Logout</option>
                         </select>
                     </div>
-                <#--<div class="clearfix"></div>-->
                 </div>
 
             </#if>

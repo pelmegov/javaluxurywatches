@@ -23,3 +23,21 @@
     background: none;
     outline: none;
 }
+
+.user-avatar {
+    margin-right: 8px;
+    margin-top: -5px;
+}
+
+.profile-title {
+    font-size: 30px;
+}
+
+.btn-profile {
+    text-decoration: none;
+}
+
+.profile-media {
+    margin-right: 8px;
+    margin-top: -5px;
+}
