@@ -63,6 +63,7 @@
                             </h5>
                             <#if (product.discount > 0) >
                                 <span class="product_discount">$ ${product.priceWithoutDiscount}</span>
+                                <span>Product discount: ${product.discount} %</span>
                             </#if>
 
                             <p>${product.text}</p>
