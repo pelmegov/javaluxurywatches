@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ru.javaluxurywatches.service.mail.BaseMailService;
 
 @Controller
@@ -33,20 +34,19 @@ public class ContactController {
                             @RequestParam String name,
                             @RequestParam String phone,
                             @RequestParam String email,
-                            @RequestParam String message) {
+                            @RequestParam String message,
+                            RedirectAttributes redirectAttributes) {
 
         String subject = "Contact Form Message Java Luxury Watches";
-        String userMessage = "User: " + name + ", Phone: " + phone + "\n" + "Message: " + message;
+        String userMessage = "User: " + name + ", Email: " + email + ", Phone: " + phone + "\n" + "Message: " + message;
 
         try {
             mailService.sendEmail(subject, userMessage, adminEmail, email);
-            model.addAttribute("isSended", true);
+            redirectAttributes.addFlashAttribute("isSended", true);
         } catch (MailException e) {
             e.printStackTrace();
-            model.addAttribute("isSended", false);
+            redirectAttributes.addFlashAttribute("isSended", false);
         }
-
-        return "contact";
+        return "redirect:/contact";
     }
-
 }
