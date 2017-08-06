@@ -37,9 +37,11 @@
             </div>
             <div class="col-md-9 contact-right">
                 <form action="/contact" method="post">
-                    <input type="text" placeholder="Name" name="name" value="<#if (user)??>${user.firstName}</#if>">
+                    <input type="text" placeholder="Name" name="name"
+                           value="<#if (user)?? && (user.firstName)??>${user.firstName}</#if>">
                     <input type="text" placeholder="Phone" name="phone">
-                    <input type="text" placeholder="Email" name="email" value="<#if (user)??>${user.email}</#if>">
+                    <input type="text" placeholder="Email" name="email"
+                           value="<#if (user)?? && (user.email)??>${user.email}</#if>">
                     <textarea placeholder="Message" name="message" required=""></textarea>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="submit-btn">
@@ -54,7 +56,8 @@
 <!--contact-end-->
 <!--map-start-->
 <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33871.023527102014!2d30.32549950204633!3d59.94667194097548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3e676f3bea7153b7!2sSavior+on+the+Spilled+Blood!5e0!3m2!1sen!2sru!4v1495052099043" style="border:0"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33871.023527102014!2d30.32549950204633!3d59.94667194097548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3e676f3bea7153b7!2sSavior+on+the+Spilled+Blood!5e0!3m2!1sen!2sru!4v1495052099043"
+            style="border:0"></iframe>
 </div>
 <!--map-end-->
 <!--information-starts-->
