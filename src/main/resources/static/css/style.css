@@ -1484,7 +1484,7 @@ a.mask {
 	padding:6em 0px;
 }
 .close {
-	background: url('../images/close.png') no-repeat 0px 0px;
+	background: url('../images/close.png') no-repeat 0 0;
 	cursor: pointer;
 	width: 28px;
 	height: 28px;
@@ -1496,6 +1496,35 @@ a.mask {
 	-o-transition: color 0.2s ease-in-out;
 	transition: color 0.2s ease-in-out;
 }
+
+.item-increment {
+	background: url('../images/plus.png') no-repeat 0 0;
+	cursor: pointer;
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	right: 5px;
+	top: 50px;
+	-webkit-transition: color 0.2s ease-in-out;
+	-moz-transition: color 0.2s ease-in-out;
+	-o-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+}
+
+.item-decrement {
+	background: url('../images/minus.png') no-repeat 0 0;
+	cursor: pointer;
+	width: 28px;
+	height: 28px;
+	position: absolute;
+	right: 5px;
+	top: 90px;
+	-webkit-transition: color 0.2s ease-in-out;
+	-moz-transition: color 0.2s ease-in-out;
+	-o-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+}
+
 .check-in {
 	width:100%;
 	margin: 2em 0 2em;
@@ -2487,7 +2516,7 @@ h3.ghj {
 .radio {
     margin: 0;
 }
-.close {
+.close, .item-decrement, .item-increment {
     width: 20px;
     height: 20px;
     top: 5px;
@@ -3003,7 +3032,7 @@ ul.cart-header li span {
     font-size: 11px;
     text-align: center;
 }
-.close {
+.close, .item-decrement, .item-increment {
     width: 17px;
     height: 17px;
 }

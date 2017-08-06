@@ -26,6 +26,8 @@ simpleCart({
                 var html =
                     "<ul class='cartitem" + item.get('id') + " cart-header'>\n" +
                     "<div class='closebutton" + item.get('id') + " simpleCart_remove close'> </div>\n" +
+                    "<a href='javascript:;' class='item-decrement simpleCart_decrement'></a>" +
+                    "<a href='javascript:;' class='item-increment simpleCart_increment'></a>" +
                     "<li class='ring-in'>\n" +
                     "<a href='" + item.get('item-link') + "'>\n" +
                     "<img src='" + item.get('image-link') + "' class='img-responsive cart-img' alt='" + item.get('image-alt') + "'>\n" +
