@@ -45,5 +45,4 @@ public class PostService {
     public Post findByLinkAndIsActive(String link, Boolean active) {
         return postRepository.findByLinkAndIsActive(link, active);
     }
-
 }

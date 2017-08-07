@@ -20,5 +20,4 @@ public class Image {
     @ManyToOne
     @PrimaryKeyJoinColumn
     private Product product;
-
 }
