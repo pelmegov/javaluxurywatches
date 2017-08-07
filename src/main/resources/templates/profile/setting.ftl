@@ -16,7 +16,6 @@
                             <div class="list-group">
                                 <a href="/users/profile/setting" class="list-group-item">Profile</a>
                                 <a href="/users/profile/account" class="list-group-item">Account</a>
-                                <a href="#" class="list-group-item">Email</a>
                                 <a href="#" class="list-group-item">
                                     <span class="badge">3</span>
                                     Support</a>

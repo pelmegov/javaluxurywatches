@@ -18,13 +18,13 @@
                             ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
                         <hr>
                         <h3><strong>Location</strong></h3>
-                        <p>Earth</p>
+                        <p>${userDetail.country}, ${userDetail.city}, ${userDetail.address}</p>
                         <hr>
                         <h3><strong>Gender</strong></h3>
-                        <p>Unknown</p>
+                        <p>${userDetail.gender}</p>
                         <hr>
                         <h3><strong>Birthday</strong></h3>
-                        <p>January 01 1901</p>
+                        <p>${userDetail.dayOfBirth}</p>
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
             <div class="panel-body">
                     <span>
                         <h1 class="profile-title panel-title pull-left">${user.firstName} ${user.lastName}
-                            <small>example@pods.tld</small> <i
+                            <small>${user.email}</small> <i
                                     class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip"
                                     data-placement="bottom" title="John Doe is sharing with you"></i></h1>
                         <div class="dropdown pull-right">
@@ -98,7 +98,7 @@
                              width="50px" height="50px">
                     </a>
                 </div>
-                <h4><a class="profile-media" href="#"><strong>John Doe</strong></a> –
+                <h4><a class="profile-media" href="#"><strong>${user.firstName} ${user.lastName}</strong></a> –
                     <small>
                         <small><a class="profile-media" href="#"><i><i class="fa fa-clock-o"
                                                                        aria-hidden="true"></i>
