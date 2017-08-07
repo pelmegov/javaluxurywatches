@@ -1,6 +1,9 @@
 INSERT INTO "user" (login, password, first_name, last_name, email, is_active) VALUES ('admin', '123456', 'walter', 'white', 'admin@lux.com', true);
 INSERT INTO "user" (login, password, first_name, last_name, email, is_active) VALUES ('user', '123456', 'jesse', 'pinkman','user@lux.com', true);
 
+INSERT INTO "user_detail" (gender,address,city,country,postcode,day_of_birth) VALUES ('Male', 'Sumska 24', 'Kharkiv', 'Ukrain', 600100, now());
+INSERT INTO "user_detail" (gender,address,city,country,postcode,day_of_birth) VALUES ('Female', 'Arbat 25', 'Moscow', 'Russia', 601044, now());
+
 INSERT INTO "role" (name) VALUES ('ROLE_ADMIN');
 INSERT INTO "role" (name) VALUES ('ROLE_USER');
 
