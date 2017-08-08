@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.hibernate.validator.constraints.Email;
+import org.springframework.data.domain.Persistable;
 import ru.javaluxurywatches.model.blog.Post;
 
 import javax.persistence.*;
@@ -13,14 +14,14 @@ import java.util.Set;
 @Entity
 @Table(name = "\"USER\"")
 @EqualsAndHashCode(exclude = {"id", "posts", "roles"})
-@ToString(exclude = {"id", "posts", "roles"})
-public class User {
+@ToString(exclude = {"id", "login", "firstName", "lastName", "email", "posts", "roles"})
+public class User implements Persistable<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
+    @Column(unique = true, updatable = false)
     private String login;
 
     private String password;
@@ -44,4 +45,10 @@ public class User {
 
     @OneToOne(mappedBy = "user")
     private UserDetail userDetail;
+
+    @Override
+    public boolean isNew() {
+        return getId() == null &&
+                this.getId() == null;
+    }
 }

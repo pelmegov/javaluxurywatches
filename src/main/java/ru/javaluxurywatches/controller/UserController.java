@@ -12,8 +12,6 @@ import ru.javaluxurywatches.model.user.User;
 import ru.javaluxurywatches.service.user.UserDetailService;
 import ru.javaluxurywatches.service.user.UserService;
 
-import javax.validation.Valid;
-
 @Controller
 @RequestMapping("/users")
 public class UserController {
@@ -44,13 +42,13 @@ public class UserController {
     }
 
     @RequestMapping(value = "/profile/setting", method = RequestMethod.POST)
-    public String mainSetting(@Valid @ModelAttribute User user,
+    public String mainSetting(@ModelAttribute User user,
                               final BindingResult result,
                               RedirectAttributes redirectAttrs) {
         if (result.hasErrors()) {
             return "redirect:profile/setting";
         }
-        userService.save(user);
+        userService.merge(user);
         return "profile/main";
     }
 

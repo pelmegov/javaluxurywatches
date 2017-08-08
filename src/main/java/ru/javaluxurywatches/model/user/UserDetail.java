@@ -3,6 +3,7 @@ package ru.javaluxurywatches.model.user;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.springframework.data.domain.Persistable;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,11 +12,11 @@ import java.util.Date;
 @Entity
 @Table(name = "user_detail")
 @EqualsAndHashCode(exclude = {"id", "user"})
-@ToString(exclude = {"id", "country", "city", "street", "home", "dayOfBirth"})
-public class UserDetail {
+@ToString(exclude = {"id", "gender", "address", "city", "country", "postcode", "dayOfBirth"})
+public class UserDetail implements Persistable<Long> {
 
     public enum Gender {
-        Male, Female
+        Male, Female;
     }
 
     @Id
@@ -39,4 +40,10 @@ public class UserDetail {
     @OneToOne
     @JoinColumn(name = "id")
     private User user;
+
+    @Override
+    public boolean isNew() {
+        return getId() == null &&
+                this.getId() == null;
+    }
 }

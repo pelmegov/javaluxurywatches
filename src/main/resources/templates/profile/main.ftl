@@ -8,13 +8,13 @@
         <!-- Form Name -->
         <legend>Profile Details</legend>
 
-        <input type="hidden" name="id" path="id"/>
+        <input type="hidden" name="id" value="${user.id}"/>
 
         <!-- Text input-->
         <div class="form-group">
             <label class="col-sm-2 control-label" for="textinput">Login</label>
             <div class="col-sm-10">
-                <input type="text" placeholder="Enter your login" class="profile-input"
+                <input name="login" type="text" readonly placeholder="Enter your login" class="profile-input"
                        value="<#if (user)?? && (user.login)??>${user.login}</#if>">
             </div>
         </div>
@@ -52,7 +52,6 @@
             <div class="col-sm-4">
                 <input name="password" type="password" placeholder="Password" class="profile-input">
             </div>
-
         </div>
 
         <!-- Text input-->
