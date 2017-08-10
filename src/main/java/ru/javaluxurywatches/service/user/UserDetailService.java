@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserDetailService {
+public class UserDetailService extends UserEntityManager {
 
     private final UserDetailRepository userDetailRepository;
 
@@ -41,10 +41,19 @@ public class UserDetailService {
     }
 
     public List<UserDetail> findByPostcode(Long postcode) {
-        return findByPostcode(postcode);
+        return userDetailRepository.findByPostcode(postcode);
     }
 
     public List<UserDetail> findByDayOfBirth(Data data) {
         return userDetailRepository.findByDayOfBirth(data);
+    }
+
+    public void update(UserDetail userDetail) {
+        if (userDetail.isNew()) {
+            userDetailRepository.save(userDetail);
+        } else {
+            UserDetail currentUserDetail = findById(userDetail.getId());
+            merge(userDetail, currentUserDetail);
+        }
     }
 }
