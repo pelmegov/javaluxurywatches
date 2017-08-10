@@ -80,7 +80,7 @@
             <div class="col-md-9 header-left">
                 <div class="top-nav">
                     <ul class="memenu skyblue">
-                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/">Home</a></li>
                     <#list categories as category>
                         <li class="grid"><a
                                 href="/category/${category.link}?size=${categoryPageSize}">${category.title}</a></li>
