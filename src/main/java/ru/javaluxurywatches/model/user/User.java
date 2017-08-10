@@ -4,10 +4,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.domain.Persistable;
 import ru.javaluxurywatches.model.blog.Post;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Data
@@ -26,6 +28,7 @@ public class User implements Persistable<Long> {
 
     private String password;
 
+    @NotEmpty
     private String firstName;
 
     private String lastName;
@@ -43,7 +46,8 @@ public class User implements Persistable<Long> {
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_detail_id")
     private UserDetail userDetail;
 
     @Override

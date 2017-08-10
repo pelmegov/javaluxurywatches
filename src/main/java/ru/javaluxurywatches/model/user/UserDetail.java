@@ -37,8 +37,7 @@ public class UserDetail implements Persistable<Long> {
     @Temporal(TemporalType.DATE)
     private Date dayOfBirth;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @OneToOne(mappedBy = "userDetail")
     private User user;
 
     @Override
