@@ -33,7 +33,7 @@ public class ProfileInterceptor extends HandlerInterceptorAdapter {
                            ModelAndView modelAndView) throws Exception {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findByLogin(auth.getName());
-        modelAndView.addObject("userDetail", userDetailService.findById(user.getId()));
+        modelAndView.addObject("userDetail", user.getUserDetail());
         super.postHandle(request, response, handler, modelAndView);
     }
 }
