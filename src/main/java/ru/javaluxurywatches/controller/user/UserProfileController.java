@@ -1,4 +1,4 @@
-package ru.javaluxurywatches.controller;
+package ru.javaluxurywatches.controller.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,20 +15,15 @@ import ru.javaluxurywatches.service.user.UserService;
 
 @Controller
 @RequestMapping("/users")
-public class UserController {
+public class UserProfileController {
 
     private final UserService userService;
     private final UserDetailService userDetailService;
 
     @Autowired
-    public UserController(UserService userService, UserDetailService userDetailService) {
+    public UserProfileController(UserService userService, UserDetailService userDetailService) {
         this.userService = userService;
         this.userDetailService = userDetailService;
-    }
-
-    @RequestMapping("/")
-    public Iterable<User> users() {
-        return userService.findAll();
     }
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
@@ -38,7 +33,6 @@ public class UserController {
 
     @RequestMapping(value = "/profile/setting", method = RequestMethod.GET)
     public String doMainSetting(Model model) {
-
         return "profile/main";
     }
 
@@ -71,13 +65,5 @@ public class UserController {
         }
         userDetailService.update(userDetail);
         return "profile/account";
-    }
-
-    boolean testAddUser() {
-        User user = new User();
-        user.setLogin("TestUser");
-        userService.save(user);
-        String login = userService.findByLogin(user.getLogin()).getLogin();
-        return login != null && login.equals(user.getLogin());
     }
 }
