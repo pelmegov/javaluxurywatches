@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import ru.javaluxurywatches.model.user.User;
 import ru.javaluxurywatches.service.user.UserService;
+import ru.javaluxurywatches.util.CaseName;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,6 +41,9 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
             User user = null;
             if (auth.getPrincipal() != "anonymousUser") {
                 user = userService.findByLogin(auth.getName());
+                //TODO Make a simpler solution
+                user.setFirstName(CaseName.checkName(user.getFirstName()));
+                user.setLastName(CaseName.checkName(user.getLastName()));
             }
             modelAndView.addObject("user", user);
             super.postHandle(request, response, handler, modelAndView);
