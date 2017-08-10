@@ -4,7 +4,6 @@
 <form class="form-horizontal" name="user" method="post" action="">
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     <fieldset>
-
         <!-- Form Name -->
         <legend>Profile Details</legend>
 
@@ -65,7 +64,7 @@
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <div class="pull-right">
-                    <button type="submit" class="profile-button">Update</button>
+                    <button type="submit" class="profile-button">Save</button>
                 </div>
             </div>
         </div>
