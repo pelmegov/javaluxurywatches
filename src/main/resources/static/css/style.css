@@ -1335,8 +1335,13 @@ a.mask {
 .contact-text{
 	margin-top:4%;
 }
+.contact-right .control-group-small {
+    width: 32.51%;
+	float: left;
+	margin-right: 5px;
+}
 .contact-right input[type="text"] {
-	width: 32.51%;
+	width: 100%;
 	margin: 0px;
 	color: #000;
 	background: none;

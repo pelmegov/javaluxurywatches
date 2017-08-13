@@ -1,4 +1,5 @@
 <#include "/include/template.ftl" />
+<#import "/spring.ftl" as spring/>
 
 <@template title="Contact">
 <!--contact-start-->
@@ -37,12 +38,49 @@
             </div>
             <div class="col-md-9 contact-right">
                 <form action="/contact" method="post">
-                    <input type="text" placeholder="Name" name="name"
-                           value="<#if (user)?? && (user.firstName)??>${user.firstName}</#if>">
-                    <input type="text" placeholder="Phone" name="phone">
-                    <input type="text" placeholder="Email" name="email"
-                           value="<#if (user)?? && (user.email)??>${user.email}</#if>">
-                    <textarea placeholder="Message" name="message" required=""></textarea>
+
+                    <div class="control-group control-group-small">
+                        <@spring.bind "contactForm.name"/>
+                        <input type="text" placeholder="Name *" name="name" required=""
+                               value="<#if (user)?? && (user.firstName)??>${user.firstName}</#if>">
+                        <div class="controls">
+                            <#list spring.status.errorMessages as error>
+                                <span class="help-inline">${error}</span><br>
+                            </#list>
+                        </div>
+                    </div>
+
+                    <div class="control-group control-group-small">
+                        <@spring.bind "contactForm.phone"/>
+                        <input type="text" placeholder="Phone" name="phone">
+                        <div class="controls">
+                            <#list spring.status.errorMessages as error>
+                                <span class="help-inline">${error}</span><br>
+                            </#list>
+                        </div>
+                    </div>
+
+                    <div class="control-group control-group-small">
+                        <@spring.bind "contactForm.email"/>
+                        <input type="text" placeholder="Email *" name="email" required=""
+                               value="<#if (user)?? && (user.email)??>${user.email}</#if>">
+                        <div class="controls">
+                            <#list spring.status.errorMessages as error>
+                                <span class="help-inline">${error}</span><br>
+                            </#list>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <@spring.bind "contactForm.message"/>
+                        <textarea placeholder="Message *" name="message" required=""></textarea>
+                        <div class="controls">
+                            <#list spring.status.errorMessages as error>
+                                <span class="help-inline">${error}</span><br>
+                            </#list>
+                        </div>
+                    </div>
+
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <div class="submit-btn">
                         <input type="submit" value="SUBMIT">
