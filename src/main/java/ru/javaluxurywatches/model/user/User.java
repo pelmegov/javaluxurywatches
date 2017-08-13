@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.hibernate.validator.constraints.Email;
+import ru.javaluxurywatches.annotation.Phone;
 import ru.javaluxurywatches.model.blog.Post;
 
 import javax.persistence.*;
@@ -32,6 +33,10 @@ public class User {
     @Email
     @Column(unique = true)
     private String email;
+
+    @Phone
+    @Column(unique = true)
+    private Long phone;
 
     private Boolean isActive;
 
