@@ -1,5 +1,5 @@
-INSERT INTO "user" (login, password, first_name, last_name, email, is_active) VALUES ('admin', '123456', 'walter', 'white', 'admin@lux.com', true);
-INSERT INTO "user" (login, password, first_name, last_name, email, is_active) VALUES ('user', '123456', 'jesse', 'pinkman','user@lux.com', true);
+INSERT INTO "user" (login, password, first_name, last_name, email, phone, is_active) VALUES ('admin', '123456', 'walter', 'white', 'admin@lux.com', '+30538522143',  true);
+INSERT INTO "user" (login, password, first_name, last_name, email, phone, is_active) VALUES ('user', '123456', 'jesse', 'pinkman','user@lux.com', '+30438622183', true);
 
 INSERT INTO "role" (name) VALUES ('ROLE_ADMIN');
 INSERT INTO "role" (name) VALUES ('ROLE_USER');
