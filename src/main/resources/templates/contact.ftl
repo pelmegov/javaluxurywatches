@@ -53,7 +53,7 @@
                     <div class="control-group control-group-small">
                         <@spring.bind "contactForm.phone"/>
                         <input type="text" placeholder="Phone" name="phone"
-                               value="+<#if (user)?? && (user.phone)??>${user.phone?c}</#if>">
+                               value="<#if (user)?? && (user.phone)??>${user.phone?c}</#if>">
                         <div class="controls">
                             <#list spring.status.errorMessages as error>
                                 <span class="help-inline">${error}</span><br>
