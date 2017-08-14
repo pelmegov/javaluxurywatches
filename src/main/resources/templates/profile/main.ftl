@@ -47,17 +47,18 @@
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-sm-2 control-label" for="textinput">Password</label>
+            <label class="col-sm-2 control-label" for="textinput">Phone</label>
             <div class="col-sm-4">
-                <input name="password" type="password" placeholder="Password" class="profile-input">
+                <input name="phone" type="text" placeholder="Phone number" class="profile-input"
+                       value="<#if (user)?? && (user.phone)??>${user.phone}</#if>">
             </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-sm-2 control-label" for="textinput">Confirm</label>
+            <label class="col-sm-2 control-label" for="textinput">Password</label>
             <div class="col-sm-4">
-                <input type="text" placeholder="Confirm your password" class="profile-input">
+                <input name="password" type="password" placeholder="Password" class="profile-input">
             </div>
         </div>
 

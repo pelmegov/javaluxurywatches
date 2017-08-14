@@ -25,7 +25,7 @@
             <#if (user)??>
                 <div class="drop">
                              <span class="user-avatar pull-left">
-                                        <img src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png"
+                                        <img src="/images/avatar.jpg"
                                              class="img-responsive img-circle"
                                              title="${user.firstName} ${user.lastName}"
                                              alt="${user.firstName} ${user.lastName}"
