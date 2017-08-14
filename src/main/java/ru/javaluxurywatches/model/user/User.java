@@ -6,6 +6,7 @@ import lombok.ToString;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.domain.Persistable;
+import ru.javaluxurywatches.annotation.Phone;
 import ru.javaluxurywatches.model.blog.Post;
 
 import javax.persistence.*;
@@ -36,6 +37,10 @@ public class User implements Persistable<Long> {
     @Email
     @Column(unique = true)
     private String email;
+
+    @Phone
+    @Column(unique = true)
+    private Long phone;
 
     private Boolean isActive;
 
