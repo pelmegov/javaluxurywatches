@@ -10,7 +10,6 @@ import ru.javaluxurywatches.annotation.Phone;
 import ru.javaluxurywatches.model.blog.Post;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Data
@@ -40,7 +39,7 @@ public class User implements Persistable<Long> {
 
     @Phone
     @Column(unique = true)
-    private Long phone;
+    private String phone;
 
     private Boolean isActive;
 
