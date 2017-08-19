@@ -96,14 +96,16 @@
                 </h4>
                 <hr>
                 <div class="post-content">
-                    <table class="table">
-                        <thead class="">
+
+                    <h3>Order #1 | September 12, 2017</h3>
+                    <table class="table order-table">
+                        <thead>
                         <tr>
-                            <th>Order</th>
-                            <th>Order Date</th>
-                            <th>Delivery address</th>
-                            <th>Recipient</th>
-                            <th>Payment</th>
+                            <th>Item</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Product Sum</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -113,10 +115,10 @@
                                     <img src="/images/p-2.png" width="50,25px" height="80px">
                                 </div>
                             </td>
-                            <td>September 14, 2017</td>
-                            <td>${userDetail.country}, ${userDetail.city}, ${userDetail.address}</td>
-                            <td>${user.firstName} ${user.lastName}</td>
-                            <td>MasterCard</td>
+                            <td>AUDEMARS PIGUET</td>
+                            <td>1</td>
+                            <td>1195 $</td>
+                            <td>1195 $</td>
                         </tr>
                         <tr>
                             <td>
@@ -124,21 +126,36 @@
                                     <img src="/images/p-3.png" width="50,25px" height="80px">
                                 </div>
                             </td>
-                            <td>September 14, 2017</td>
-                            <td>${userDetail.country}, ${userDetail.city}, ${userDetail.address}</td>
-                            <td>${user.firstName} ${user.lastName}</td>
-                            <td>VISA</td>
+                            <td>BAUME ET MERCIER</td>
+                            <td>4</td>
+                            <td>1540 $</td>
+                            <td>6160 $</td>
                         </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Order #3 | October 20, 2017</h3>
+                    <table class="table order-table">
+                        <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Product Sum</th>
+                        </tr>
+                        </thead>
+                        <tbody>
                         <tr>
                             <td>
                                 <div align="center">
                                     <img src="/images/p-4.png" width="50,25px" height="80px">
                                 </div>
                             </td>
-                            <td>September 14, 2017</td>
-                            <td>${userDetail.country}, ${userDetail.city}, ${userDetail.address}</td>
-                            <td>${user.firstName} ${user.lastName}</td>
-                            <td>C.O.D.</td>
+                            <td>AUDEMARS PIGUET</td>
+                            <td>1</td>
+                            <td>286 $</td>
+                            <td>286 $</td>
                         </tr>
                         </tbody>
                     </table>

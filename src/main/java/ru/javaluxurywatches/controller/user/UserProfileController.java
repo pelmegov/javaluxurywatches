@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import ru.javaluxurywatches.model.user.User;
 import ru.javaluxurywatches.model.user.UserDetail;
-import ru.javaluxurywatches.service.user.UserDetailService;
+import ru.javaluxurywatches.service.user.UserEntityManager;
 import ru.javaluxurywatches.service.user.UserService;
 
 @Controller
@@ -18,10 +18,10 @@ import ru.javaluxurywatches.service.user.UserService;
 public class UserProfileController {
 
     private final UserService userService;
-    private final UserDetailService userDetailService;
+    private final UserEntityManager userDetailService;
 
     @Autowired
-    public UserProfileController(UserService userService, UserDetailService userDetailService) {
+    public UserProfileController(UserService userService, UserEntityManager userDetailService) {
         this.userService = userService;
         this.userDetailService = userDetailService;
     }

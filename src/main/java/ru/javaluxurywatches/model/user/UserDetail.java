@@ -2,7 +2,6 @@ package ru.javaluxurywatches.model.user;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
 import org.springframework.data.domain.Persistable;
 
 import javax.persistence.*;
@@ -10,9 +9,8 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "user_detail")
+@Table(name = "\"USER_DETAIL\"")
 @EqualsAndHashCode(exclude = {"id", "user"})
-@ToString(exclude = {"id", "gender", "address", "city", "country", "postcode", "dayOfBirth"})
 public class UserDetail implements Persistable<Long> {
 
     public enum Gender {

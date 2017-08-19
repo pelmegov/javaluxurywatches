@@ -1,33 +1,60 @@
 package ru.javaluxurywatches.service.user;
 
-import lombok.NonNull;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import ru.javaluxurywatches.model.user.UserDetail;
+import ru.javaluxurywatches.repository.user.UserDetailRepository;
+import ru.javaluxurywatches.service.system.MergeEntityManager;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.lang.reflect.Field;
+import javax.transaction.Transactional;
+import javax.xml.crypto.Data;
+import java.util.List;
 
-public abstract class UserEntityManager<T> {
+@Service
+@Transactional
+public class UserEntityManager extends MergeEntityManager {
 
-    @PersistenceContext
-    private EntityManager em;
+    private final UserDetailRepository userDetailRepository;
 
-    @SuppressWarnings("unchecked")
-    public void merge(@NonNull T fromObj, @NonNull T toObj) {
-        Field[] fields = toObj.getClass().getDeclaredFields();
-        for (Field field : fields) {
-            field.setAccessible(true);
-            try {
-                Object value1 = field.get(fromObj);
-                Object value2 = field.get(toObj);
-                Object value = (value1 != null &&
-                        !value1.equals("") &&
-                        !value1.equals(value2)) ? value1 : value2;
-                field.set(toObj, value);
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
+    @Autowired
+    public UserEntityManager(UserDetailRepository userDetailRepository) {
+        this.userDetailRepository = userDetailRepository;
+    }
+
+    public UserDetail findById(Long id) {
+        return userDetailRepository.findById(id);
+    }
+
+    public List<UserDetail> findByGender(UserDetail.Gender gender) {
+        return userDetailRepository.findByGender(gender);
+    }
+
+    public List<UserDetail> findByAddress(String address) {
+        return userDetailRepository.findByAddress(address);
+    }
+
+    public List<UserDetail> findByCity(String city) {
+        return findByCity(city);
+    }
+
+    public List<UserDetail> findByCountry(String country) {
+        return userDetailRepository.findByCountry(country);
+    }
+
+    public List<UserDetail> findByPostcode(Long postcode) {
+        return userDetailRepository.findByPostcode(postcode);
+    }
+
+    public List<UserDetail> findByDayOfBirth(Data data) {
+        return userDetailRepository.findByDayOfBirth(data);
+    }
+
+    public void update(UserDetail userDetail) {
+        if (userDetail.isNew()) {
+            userDetailRepository.save(userDetail);
+        } else {
+            UserDetail currentUserDetail = findById(userDetail.getId());
+            merge(userDetail, currentUserDetail);
         }
-        em.merge(toObj);
-        em.flush();
     }
 }

@@ -16,7 +16,7 @@ import java.util.Set;
 @Entity
 @Table(name = "\"USER\"")
 @EqualsAndHashCode(exclude = {"id", "posts", "roles"})
-@ToString(exclude = {"id", "login", "firstName", "lastName", "email", "posts", "roles"})
+@ToString(exclude = {"id", "posts", "roles"})
 public class User implements Persistable<Long> {
 
     @Id
@@ -47,7 +47,8 @@ public class User implements Persistable<Long> {
     private Set<Post> posts;
 
     @ManyToMany
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
     @OneToOne(cascade = CascadeType.ALL)

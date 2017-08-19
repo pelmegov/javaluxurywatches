@@ -4,13 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.javaluxurywatches.model.user.User;
 import ru.javaluxurywatches.repository.user.UserRepository;
+import ru.javaluxurywatches.service.system.MergeEntityManager;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 @Transactional
-public class UserService extends UserEntityManager {
+public class UserService extends MergeEntityManager {
 
     private final UserRepository userRepository;
 
