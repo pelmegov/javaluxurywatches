@@ -25,7 +25,7 @@
             <#if (user)??>
                 <div class="drop">
                              <span class="user-avatar pull-left">
-                                        <img src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png"
+                                        <img src="/images/avatar.jpg"
                                              class="img-responsive img-circle"
                                              title="${user.firstName} ${user.lastName}"
                                              alt="${user.firstName} ${user.lastName}"
@@ -80,7 +80,7 @@
             <div class="col-md-9 header-left">
                 <div class="top-nav">
                     <ul class="memenu skyblue">
-                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/">Home</a></li>
                     <#list categories as category>
                         <li class="grid"><a
                                 href="/category/${category.link}?size=${categoryPageSize}">${category.title}</a></li>

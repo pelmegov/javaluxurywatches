@@ -9,8 +9,8 @@ simpleCart.bind('afterAdd', function (item) {
         // options
         icon: 'glyphicon glyphicon-shopping-cart',
         title: 'Success!',
-        message: 'Successfully added '+ item.get("name") +' in your cart.'
-    },{
+        message: 'Successfully added ' + item.get("name") + ' in your cart.'
+    }, {
         type: "success",
         placement: {
             from: "bottom",
@@ -24,7 +24,7 @@ simpleCart.bind('afterAdd', function (item) {
 simpleCart({
     cartColumns: [
         {
-            view: function(item, column){
+            view: function (item, column) {
                 // html content include in <div class="simpleCart_items"></div>
                 var html =
                     "<ul class='cartitem" + item.get('id') + " cart-header'>\n" +
@@ -67,17 +67,28 @@ function messageSendSuccess() {
         icon: 'glyphicon glyphicon-envelope',
         title: 'Thank You!',
         message: 'Email succesfully sended.'
-    },{
+    }, {
         type: "success"
     })
 }
+
 function messageSendError() {
     $.notify({
         // options
         icon: 'glyphicon glyphicon-envelope',
         title: 'Error!',
         message: 'Email not sended, sorry. Please, try again later...'
-    },{
+    }, {
         type: "danger"
     })
 }
+
+// set active link for current page
+$(function () {
+    $('a').each(function () {
+        if ($(this).prop('href') == window.location.href) {
+            $(this).addClass('active');
+            $(this).parents('li').addClass('active');
+        }
+    });
+});

@@ -1,51 +1,40 @@
 package ru.javaluxurywatches.interceptor;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import ru.javaluxurywatches.model.user.User;
+import ru.javaluxurywatches.service.user.UserEntityManager;
 import ru.javaluxurywatches.service.user.UserService;
-import ru.javaluxurywatches.util.CommonUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Component
-public class AppInterceptor extends HandlerInterceptorAdapter {
+public class ProfileInterceptor extends HandlerInterceptorAdapter {
 
+    private final UserEntityManager userDetailService;
     private final UserService userService;
 
     @Autowired
-    public AppInterceptor(UserService userService) {
+    public ProfileInterceptor(UserEntityManager userDetailService,
+                              UserService userService) {
+        this.userDetailService = userDetailService;
         this.userService = userService;
     }
 
-    @Value("${blog.page-size}")
-    private Integer blogPageSize;
-
-    @Value("${category.page-size}")
-    private Integer categoryPageSize;
-
     @Override
     public void postHandle(HttpServletRequest request,
-                           HttpServletResponse response, Object handler,
+                           HttpServletResponse response,
+                           Object handler,
                            ModelAndView modelAndView) throws Exception {
         if (modelAndView != null) {
-            modelAndView.addObject("blogPageSize", blogPageSize);
-            modelAndView.addObject("categoryPageSize", categoryPageSize);
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-            User user = null;
-            if (auth.getPrincipal() != "anonymousUser") {
-                user = userService.findByLogin(auth.getName());
-                //TODO Make a simpler solution
-                user.setFirstName(CommonUtil.toUpperCaseFirstChar(user.getFirstName()));
-                user.setLastName(CommonUtil.toUpperCaseFirstChar(user.getLastName()));
-            }
-            modelAndView.addObject("user", user);
+            User user = userService.findByLogin(auth.getName());
+            modelAndView.addObject("userDetail", user.getUserDetail());
             super.postHandle(request, response, handler, modelAndView);
         }
     }

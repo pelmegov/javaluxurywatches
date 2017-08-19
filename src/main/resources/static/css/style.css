@@ -3147,3 +3147,10 @@ ul.tag-men {
 .cart-total, .cart-total span.simpleCart_total {
 	font-size: 24px;
 }
+
+.order-table thead tr th {
+	width: 20%;
+}
+.order-table tbody tr td {
+	width: 20%;
+}

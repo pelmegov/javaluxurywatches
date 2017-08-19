@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import ru.javaluxurywatches.model.blog.Post;
 import ru.javaluxurywatches.repository.blog.PostRepository;
 
-
 @Controller
 public class BlogController {
 
@@ -45,5 +44,4 @@ public class BlogController {
         model.addAttribute(Attr.POST, postService.findByLinkAndIsActive(link, true));
         return "blog/post";
     }
-
 }

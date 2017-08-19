@@ -4,13 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.javaluxurywatches.model.user.User;
 import ru.javaluxurywatches.repository.user.UserRepository;
+import ru.javaluxurywatches.service.system.MergeEntityManager;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 @Transactional
-public class UserService {
+public class UserService extends MergeEntityManager {
 
     private final UserRepository userRepository;
 
@@ -43,4 +44,12 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public void update(User user) {
+        if (user.isNew()) {
+            userRepository.save(user);
+        } else {
+            User currentUser = findById(user.getId());
+            merge(user, currentUser);
+        }
+    }
 }

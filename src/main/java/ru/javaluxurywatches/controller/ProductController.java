@@ -61,5 +61,4 @@ public class ProductController {
     public String cart() {
         return "shop/checkout";
     }
-
 }

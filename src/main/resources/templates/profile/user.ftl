@@ -8,23 +8,36 @@
             <div class="panel-body">
                 <div class="media">
                     <div align="center">
-                        <img class="thumbnail img-responsive" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png"
+                        <img class="thumbnail img-responsive" src="/images/avatar.jpg"
                              width="300px" height="300px">
+                        <h3>
+                            <strong>${user.firstName} ${user.lastName}
+                                <a href="/users/profile/setting">
+                                    <small>
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                    </small>
+                                </a>
+                            </strong>
+                        </h3>
                     </div>
                     <div class="media-body">
                         <hr>
                         <h3><strong>Bio</strong></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non
-                            ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
+                        <p><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Email: ${user.email}
+                        </p>
+                        <p><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> Phone: ${user.phone}
+                        </p>
                         <hr>
                         <h3><strong>Location</strong></h3>
-                        <p>Earth</p>
+                        <p>Country: ${userDetail.country}</p>
+                        <p>City: ${userDetail.city}</p>
+                        <p>Address: ${userDetail.address}</p>
                         <hr>
                         <h3><strong>Gender</strong></h3>
-                        <p>Unknown</p>
+                        <p>${userDetail.gender}</p>
                         <hr>
                         <h3><strong>Birthday</strong></h3>
-                        <p>January 01 1901</p>
+                        <p>${userDetail.dayOfBirth}</p>
                     </div>
                 </div>
             </div>
@@ -33,40 +46,16 @@
     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
         <div class="panel panel-default">
             <div class="panel-body">
-                    <span>
-                        <h1 class="profile-title panel-title pull-left">${user.firstName} ${user.lastName}
-                            <small>example@pods.tld</small> <i
-                                    class="fa fa-check text-success" aria-hidden="true" data-toggle="tooltip"
-                                    data-placement="bottom" title="John Doe is sharing with you"></i></h1>
-                        <div class="dropdown pull-right">
-                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu1"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Friends
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="#">Familly</a></li>
-                                <li><a href="#"><i class="fa fa-fw fa-check" aria-hidden="true"></i> Friends</a></li>
-                                <li><a href="#">Work</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#"><i class="fa fa-fw fa-plus" aria-hidden="true"></i> Add a new aspect</a></li>
-                            </ul>
-                        </div>
-                    </span>
-                <br><br>
-                <i class="fa fa-tags" aria-hidden="true"></i> <a href="/tags/diaspora" class="tag">#diaspora</a> <a
-                    href="/tags/hashtag" class="tag">#hashtag</a> <a href="/tags/caturday" class="tag">#caturday</a>
-                <br><br>
-                <hr>
                 <span class="pull-left">
                         <a href="#" class="btn-profile btn btn-link"><i class="fa fa-fw fa-files-o"
-                                                                        aria-hidden="true"></i> Posts</a>
+                                                                        aria-hidden="true"></i> Archive
+                        <span
+                                class="badge">15</span></a>
                         <a href="#" class="btn-profile btn btn-link"><i class="fa fa-fw fa-picture-o"
-                                                                        aria-hidden="true"></i> Photos <span
+                                                                        aria-hidden="true"></i> Like <span
                                 class="badge">42</span></a>
                         <a href="#" class="btn-profile btn btn-link"><i class="fa fa-fw fa-users"
-                                                                        aria-hidden="true"></i> Contacts <span
-                                class="badge">42</span></a>
+                                                                        aria-hidden="true"></i> Desires</a>
                     </span>
                 <span class="pull-right">
                         <a href="#" class="btn-profile btn btn-link""><i class="fa fa-lg fa-at"
@@ -94,11 +83,11 @@
                 <div class="pull-left">
                     <a href="#">
                         <img class="profile-media media-object img-circle"
-                             src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png"
+                             src="/images/avatar.jpg"
                              width="50px" height="50px">
                     </a>
                 </div>
-                <h4><a class="profile-media" href="#"><strong>John Doe</strong></a> –
+                <h4><a class="profile-media" href="#"><strong>${user.firstName} ${user.lastName}</strong></a> –
                     <small>
                         <small><a class="profile-media" href="#"><i><i class="fa fa-clock-o"
                                                                        aria-hidden="true"></i>
@@ -107,27 +96,82 @@
                 </h4>
                 <hr>
                 <div class="post-content">
-                    <p>Simple post content example.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel gravida metus, non
-                        ultrices sapien. Morbi odio metus, dapibus non nibh id amet.</p>
+
+                    <h3>Order #1 | September 12, 2017</h3>
+                    <table class="table order-table">
+                        <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Product Sum</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div align="center">
+                                    <img src="/images/p-2.png" width="50,25px" height="80px">
+                                </div>
+                            </td>
+                            <td>AUDEMARS PIGUET</td>
+                            <td>1</td>
+                            <td>1195 $</td>
+                            <td>1195 $</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div align="center">
+                                    <img src="/images/p-3.png" width="50,25px" height="80px">
+                                </div>
+                            </td>
+                            <td>BAUME ET MERCIER</td>
+                            <td>4</td>
+                            <td>1540 $</td>
+                            <td>6160 $</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Order #3 | October 20, 2017</h3>
+                    <table class="table order-table">
+                        <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Product Sum</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div align="center">
+                                    <img src="/images/p-4.png" width="50,25px" height="80px">
+                                </div>
+                            </td>
+                            <td>AUDEMARS PIGUET</td>
+                            <td>1</td>
+                            <td>286 $</td>
+                            <td>286 $</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <hr>
                 <div>
-                    <div class="pull-right btn-group-xs">
-                        <a class="btn btn-default btn-xs"><i class="fa fa-heart" aria-hidden="true"></i> Like</a>
+                    <div class=" pull-right btn-group-xs">
+                        <a class="btn btn-default btn-xs"><i class="fa fa-heart" aria-hidden="true"></i>
+                            Like</a>
                         <a class="btn btn-default btn-xs"><i class="fa fa-retweet" aria-hidden="true"></i>
                             Reshare</a>
                         <a class="btn btn-default btn-xs"><i class="fa fa-comment" aria-hidden="true"></i>
                             Comment</a>
                     </div>
-                    <div class="pull-left">
-                        <p class="text-muted""><i class="fa fa-globe"
-                                                  aria-hidden="true"></i> Public</p>
-                    </div>
                     <br>
                 </div>
-                <hr>
-
             </div>
         </div>
     </div>

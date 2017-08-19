@@ -43,6 +43,5 @@ public class Post {
 
     @Generated(ALWAYS)
     private Date updatedDate;
-
 }
 

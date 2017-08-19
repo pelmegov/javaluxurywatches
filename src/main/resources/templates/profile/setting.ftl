@@ -9,14 +9,17 @@
                 <div class="panel-body">
                     <div class="media">
                         <div align="center">
-                            <img class="thumbnail img-responsive" src="https://lut.im/7JCpw12uUT/mY0Mb78SvSIcjvkf.png"
+                            <img class="thumbnail img-responsive" src="/images/avatar.jpg"
                                  width="300px" height="300px">
                         </div>
                         <div class="media-body">
                             <div class="list-group">
-                                <a href="/users/profile/setting" class="list-group-item">Profile</a>
+                                <a href="/users/profile" class="list-group-item">Profile</a>
+                                <a href="#" class="list-group-item disabled">
+                                    Setting
+                                </a>
+                                <a href="/users/profile/setting" class="list-group-item">Profile Details</a>
                                 <a href="/users/profile/account" class="list-group-item">Account</a>
-                                <a href="#" class="list-group-item">Email</a>
                                 <a href="#" class="list-group-item">
                                     <span class="badge">3</span>
                                     Support</a>

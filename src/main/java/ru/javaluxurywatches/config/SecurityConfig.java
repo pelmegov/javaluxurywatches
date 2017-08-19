@@ -49,5 +49,4 @@ class SecurityConfig extends WebSecurityConfigurerAdapter {
                         " \"user\", role, user_role where \"user\".login = ? " +
                         "AND \"user\".id = user_role.user_id AND role.id = user_role.role_id");
     }
-
 }

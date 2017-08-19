@@ -14,7 +14,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Set;
 
-
 @Data
 @Entity
 @Table(name = "\"PRODUCT\"")
@@ -57,5 +56,4 @@ public class Product {
     @ManyToMany(mappedBy="products")
     @Fetch(FetchMode.JOIN)
     private Set<Category> categories;
-
 }
