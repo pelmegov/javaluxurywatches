@@ -1338,8 +1338,12 @@ a.mask {
 .contact-right .control-group-small {
     width: 32.51%;
 	float: left;
+}
+
+.contact-right .control-group-small:nth-child(-n+2) {
 	margin-right: 5px;
 }
+
 .contact-right input[type="text"] {
 	width: 100%;
 	margin: 0px;
