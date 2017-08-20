@@ -25,9 +25,9 @@ public class PhoneConstraintValidator implements ConstraintValidator<Phone, Stri
             return false;
         }
 
-        phoneField = phoneField.replace("-", "");
+        phoneField = phoneField.trim().replace("-", "");
 
-        if (phoneField.substring(0, 1).equals("+")){
+        if (!phoneField.isEmpty() && phoneField.substring(0, 1).equals("+")){
             return phoneField.matches("^\\+[0-9]{1}[0-9]{9,14}$");
         }
         return phoneField.matches("^[0-9]{9,11}$");
