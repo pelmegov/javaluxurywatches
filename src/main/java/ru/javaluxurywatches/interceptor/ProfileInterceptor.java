@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import ru.javaluxurywatches.model.user.User;
-import ru.javaluxurywatches.service.user.UserEntityManager;
+import ru.javaluxurywatches.service.user.UserDetailService;
 import ru.javaluxurywatches.service.user.UserService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,11 +16,11 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class ProfileInterceptor extends HandlerInterceptorAdapter {
 
-    private final UserEntityManager userDetailService;
+    private final UserDetailService userDetailService;
     private final UserService userService;
 
     @Autowired
-    public ProfileInterceptor(UserEntityManager userDetailService,
+    public ProfileInterceptor(UserDetailService userDetailService,
                               UserService userService) {
         this.userDetailService = userDetailService;
         this.userService = userService;

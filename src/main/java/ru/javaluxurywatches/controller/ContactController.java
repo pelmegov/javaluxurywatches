@@ -36,24 +36,22 @@ public class ContactController {
     @RequestMapping(value = "/contact", method = RequestMethod.POST)
     public String sendEmail(@Valid ContactForm contactForm,
                             BindingResult bindingResult,
-                            RedirectAttributes redirectAttributes) {
+                            RedirectAttributes redirectAttributes,
+                            Model model) {
 
         if (bindingResult.hasErrors()) {
             System.out.println("Errors in contact form: " + bindingResult.getAllErrors());
+            model.addAttribute("contactForm", contactForm);
             return "/contact";
         }
 
         String subject = "Contact Form Message Java Luxury Watches";
-        String userMessage = "User: " + contactForm.getName()
-                + ", Email: " + contactForm.getEmail()
-                + ", Phone: " + contactForm.getPhone()
-                + "\n" + "Message: " + contactForm.getMessage();
-
         try {
-            mailService.sendEmail(subject, userMessage, adminEmail, contactForm.getEmail());
+            mailService.sendEmail(subject, contactForm.toString(), adminEmail, contactForm.getEmail());
             redirectAttributes.addFlashAttribute("isSended", true);
         } catch (MailException e) {
             e.printStackTrace();
+            redirectAttributes.addFlashAttribute("contactForm", contactForm);
             redirectAttributes.addFlashAttribute("isSended", false);
         }
         return "redirect:/contact";

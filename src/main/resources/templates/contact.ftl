@@ -42,7 +42,7 @@
                     <div class="control-group control-group-small">
                         <@spring.bind "contactForm.name"/>
                         <input type="text" placeholder="Name *" name="name" required=""
-                               value="<#if (user)?? && (user.firstName)??>${user.firstName}</#if>">
+                               value="<#if (contactForm)?? && (contactForm.name)??>${contactForm.name}<#elseif (user)?? && (user.firstName)??>${user.firstName}</#if>">
                         <div class="controls">
                             <#list spring.status.errorMessages as error>
                                 <span class="help-inline">${error}</span><br>
@@ -53,7 +53,7 @@
                     <div class="control-group control-group-small">
                         <@spring.bind "contactForm.phone"/>
                         <input type="text" placeholder="Phone" name="phone"
-                               value="<#if (user)?? && (user.phone)??>${user.phone}</#if>">
+                               value="<#if (contactForm)?? && (contactForm.phone)??>${contactForm.phone}<#elseif (user)?? && (user.phone)??>${user.phone}</#if>">
                         <div class="controls">
                             <#list spring.status.errorMessages as error>
                                 <span class="help-inline">${error}</span><br>
@@ -64,7 +64,7 @@
                     <div class="control-group control-group-small">
                         <@spring.bind "contactForm.email"/>
                         <input type="text" placeholder="Email *" name="email" required=""
-                               value="<#if (user)?? && (user.email)??>${user.email}</#if>">
+                               value="<#if (contactForm)?? && (contactForm.email)??>${contactForm.email}<#elseif (user)?? && (user.email)??>${user.email}</#if>">
                         <div class="controls">
                             <#list spring.status.errorMessages as error>
                                 <span class="help-inline">${error}</span><br>
@@ -74,7 +74,7 @@
 
                     <div class="control-group">
                         <@spring.bind "contactForm.message"/>
-                        <textarea placeholder="Message *" name="message" required=""></textarea>
+                        <textarea placeholder="Message *" name="message" required=""><#if (contactForm)?? && (contactForm.message)??>${contactForm.message}</#if></textarea>
                         <div class="controls">
                             <#list spring.status.errorMessages as error>
                                 <span class="help-inline">${error}</span><br>

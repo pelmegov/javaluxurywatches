@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.javaluxurywatches.model.user.User;
 import ru.javaluxurywatches.repository.user.UserRepository;
 import ru.javaluxurywatches.service.system.MergeEntityManager;
+import ru.javaluxurywatches.util.CommonUtil;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -46,10 +47,17 @@ public class UserService extends MergeEntityManager {
 
     public void update(User user) {
         if (user.isNew()) {
+            toUpperCaseFirstChar(user);
             userRepository.save(user);
         } else {
             User currentUser = findById(user.getId());
+            toUpperCaseFirstChar(currentUser);
             merge(user, currentUser);
         }
+    }
+
+    private void toUpperCaseFirstChar(User user) {
+        user.setFirstName(CommonUtil.toUpperCaseFirstChar(user.getFirstName()));
+        user.setLastName(CommonUtil.toUpperCaseFirstChar(user.getLastName()));
     }
 }

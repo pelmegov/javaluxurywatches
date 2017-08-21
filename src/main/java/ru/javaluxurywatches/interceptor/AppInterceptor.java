@@ -9,7 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import ru.javaluxurywatches.model.user.User;
 import ru.javaluxurywatches.service.user.UserService;
-import ru.javaluxurywatches.util.CommonUtil;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,11 +38,8 @@ public class AppInterceptor extends HandlerInterceptorAdapter {
             modelAndView.addObject("categoryPageSize", categoryPageSize);
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
             User user = null;
-            if (auth.getPrincipal() != "anonymousUser") {
+            if (auth != null && auth.getPrincipal() != "anonymousUser") {
                 user = userService.findByLogin(auth.getName());
-                //TODO Make a simpler solution
-                user.setFirstName(CommonUtil.toUpperCaseFirstChar(user.getFirstName()));
-                user.setLastName(CommonUtil.toUpperCaseFirstChar(user.getLastName()));
             }
             modelAndView.addObject("user", user);
             super.postHandle(request, response, handler, modelAndView);

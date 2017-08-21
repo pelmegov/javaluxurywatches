@@ -12,12 +12,12 @@ import java.util.List;
 
 @Service
 @Transactional
-public class UserEntityManager extends MergeEntityManager {
+public class UserDetailService extends MergeEntityManager {
 
     private final UserDetailRepository userDetailRepository;
 
     @Autowired
-    public UserEntityManager(UserDetailRepository userDetailRepository) {
+    public UserDetailService(UserDetailRepository userDetailRepository) {
         this.userDetailRepository = userDetailRepository;
     }
 

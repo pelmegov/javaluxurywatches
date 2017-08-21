@@ -14,7 +14,7 @@ public class ContactForm {
     @Size(min = 3, max = 64)
     private String name;
 
-    @Phone(nullable = true)
+    @Phone(nullable = true, message = "Invalid phone number.")
     private String phone;
 
     @NotEmpty
@@ -25,4 +25,11 @@ public class ContactForm {
     @Size(min = 3, max = 1024)
     private String message;
 
+    @Override
+    public String toString() {
+        return "User: " + name
+                + ", Email: " + email
+                + ", Phone: " + phone
+                + "\n" + "Message: " + message;
+    }
 }
