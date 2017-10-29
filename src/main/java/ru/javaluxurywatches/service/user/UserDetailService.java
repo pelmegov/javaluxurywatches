@@ -34,7 +34,7 @@ public class UserDetailService extends MergeEntityManager {
     }
 
     public List<UserDetail> findByCity(String city) {
-        return findByCity(city);
+        return userDetailRepository.findByCity(city);
     }
 
     public List<UserDetail> findByCountry(String country) {
